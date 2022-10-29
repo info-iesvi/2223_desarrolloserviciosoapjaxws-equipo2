@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<books>
+    <book>
+        <id>
+            1
+        </id>
+        <title>
+            How to survive in 2ndDam
+        </title>
+        <author>
+            Isabel y Sara
+        </author>
+        <editorial>
+            Pepitorial
+        </editorial>
+        <stock>
+            10
+        </stock>
+        <condition>
+            Good
+        </condition>
+        <prize>
+            22.99
+        </prize>
+    </book>
+    <book>
+        <id>
+            2
+        </id>
+        <title>
+            How to learn Python
+        </title>
+        <author>
+            J.J. Williams
+        </author>
+        <editorial>
+            PSP
+        </editorial>
+        <stock>
+            1
+        </stock>
+        <condition>
+            Bad
+        </condition>
+        <prize>
+            15.99
+        </prize>
+    </book>
+    <book>
+        <id>
+            3
+        </id>
+        <title>
+            Microservice Architecture
+        </title>
+        <author>
+            Joseph Lewis
+        </author>
+        <editorial>
+            PSP
+        </editorial>
+        <stock>
+            0
+        </stock>
+        <condition>
+            Good
+        </condition>
+        <prize>
+            23.87
+        </prize>
+    </book>
+</books>

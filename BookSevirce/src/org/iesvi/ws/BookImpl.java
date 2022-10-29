@@ -1,16 +1,19 @@
 package org.iesvi.ws;
 
 import javafx.scene.image.Image;
+import org.xml.sax.SAXException;
 
 import javax.jws.WebService;
+import javax.xml.bind.Element;
+import javax.xml.parsers.ParserConfigurationException;
 import java.util.ArrayList;
 import java.util.List;
 
 @WebService(endpointInterface = "org.iesvi.ws.Book")
-public class BookImpl implements Book {
+public class BookImpl implements Book{
 
     private int idBook;
-    private Image frontPage;
+    //private Image frontPage;
     private String title;
     private String author;
     private String editorial;
@@ -23,15 +26,21 @@ public class BookImpl implements Book {
      */
     public BookImpl() {}
 
-    public BookImpl(Image frontPage, String title, String author, String editorial, int stock, String condition, double prize) {
-        this.idBook = 0; // TODO: Hacer que se autogenere
-        this.frontPage = frontPage;
+    public BookImpl(String title, String author, String editorial, int stock, String condition, double prize) {
+
+        this.idBook = 0;
+//        this.frontPage = frontPage;
         this.title = title;
         this.author = author;
         this.editorial = editorial;
         this.stock = stock;
         this.condition = condition;
         this.prize = prize;
+    }
+
+    public BookImpl(String xmlName) throws ParserConfigurationException, SAXException {
+        BookConnection conn = new BookConnection();
+        conn.readXml(xmlName);
     }
 
     public int getIdBook() {
@@ -42,13 +51,13 @@ public class BookImpl implements Book {
         this.idBook = idBook;
     }
 
-    public Image getFrontPage() {
-        return frontPage;
-    }
-
-    public void setFrontPage(Image frontPage) {
-        this.frontPage = frontPage;
-    }
+//    public Image getFrontPage() {
+//        return frontPage;
+//    }
+//
+//    public void setFrontPage(Image frontPage) {
+//        this.frontPage = frontPage;
+//    }
 
     public String getTitle() {
         return title;
@@ -100,12 +109,27 @@ public class BookImpl implements Book {
 
     @Override
     public String toString() {
+        try {
+            BookImpl book = new BookImpl("examplesBooks");
+            this.idBook = book.idBook;
+            this.stock = book.stock;
+            this.author = book.author;
+            this.title = book.title;
+            this.editorial = book.editorial;
+            this.prize = book.prize;
+            this.condition = book.condition;
+        } catch (ParserConfigurationException e) {
+            throw new RuntimeException(e);
+        } catch (SAXException e) {
+            throw new RuntimeException(e);
+        }
+
         return "\nID: " + this.idBook + " | \tTITLE: " + this.title +
                 "\n\tAUTHOR: " + this.author +
                 "\n\tEDITORIAL: " + this.editorial + '\'' +
                 "\n\tSTOCK: " + this.stock +
                 "\n\tCONDITION: " + this.condition + '\'' +
-                "\n\tPRIZE: " + this.prize;
+                "\n\tPRIZE: £" + this.prize;
     }
 
     @Override
@@ -136,17 +160,48 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public List<Book> consultBookList() {
+    public void consultBookList() {
         List<Book> bookList = new ArrayList<>();
-
-        // TODO: Decidir qué base de datos utilizar para el repositorio de libros
-        // TODO: Hacer bucle para mostrar todos los libros
-
-        return null;
+        for(Book book:bookList){
+            System.out.println(book.toString());
+        }
     }
 
     @Override
-    public void buyBook() {
-        // TODO: Hacer método de compra de libros
+    public void addBook(BookImpl newBook) throws ParserConfigurationException, SAXException {
+        newBook = new BookImpl("examplesBooks.xml");
+
     }
+
+    @Override
+    public void deleteBook(BookImpl deletedBook) {
+
+    }
+
+    @Override
+    public void updateBook(BookImpl updatedBook) {
+
+    }
+
+//    @Override
+//    public void buyBook(String option) {
+//        if(option.compareToIgnoreCase(getAuthor())==0){
+//            if(getStock()>0){
+//                consultBookByAuthor(option);
+//            }
+//        } else if (option.compareToIgnoreCase(getEditorial())==0) {
+//            if(getStock()>0){
+//                consultBookByAuthor(option);
+//            }
+//        } else if (option.compareToIgnoreCase(getTitle())==0) {
+//            if(getStock()>0){
+//                consultBookByAuthor(option);
+//            }
+//        }else {
+//            System.out.println("Book not found");
+//        }
+//        //We use a xml file to search the data
+//    }
+
+
 }
