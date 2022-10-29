@@ -110,10 +110,8 @@ public class BookImpl implements Book {
 
     @Override
     public void consultBookByTitle(String title) {
-        BookImpl book = new BookImpl();
-
-        if (title.equalsIgnoreCase(book.getTitle())) {
-            System.out.println(book);
+        if (title.equalsIgnoreCase(this.getTitle())) {
+            System.out.println(this);
         } else {
             System.out.println("Title not found");
         }
@@ -121,10 +119,8 @@ public class BookImpl implements Book {
 
     @Override
     public void consultBookByAuthor(String author) {
-        BookImpl book = new BookImpl();
-
-        if (author.equalsIgnoreCase(book.author)) {
-            System.out.println(book);
+        if (author.equalsIgnoreCase(this.author)) {
+            System.out.println(this);
         } else {
             System.out.println("Author not found");
         }
@@ -132,10 +128,8 @@ public class BookImpl implements Book {
 
     @Override
     public void consultBookByEditorial(String editorial) {
-        BookImpl book = new BookImpl();
-
-        if (editorial.equalsIgnoreCase(book.editorial)) {
-            System.out.println(book);
+        if (editorial.equalsIgnoreCase(this.editorial)) {
+            System.out.println(this);
         } else {
             System.out.println("Editorial not found");
         }
