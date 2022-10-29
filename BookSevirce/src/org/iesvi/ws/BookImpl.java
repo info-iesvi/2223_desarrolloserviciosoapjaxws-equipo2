@@ -169,7 +169,7 @@ public class BookImpl implements Book{
 
     @Override
     public void addBook(BookImpl newBook) throws ParserConfigurationException, SAXException {
-        newBook = new BookImpl("examplesBooks.xml");
+        newBook = new BookImpl("repository/examplesBooks.xml");
 
     }
 

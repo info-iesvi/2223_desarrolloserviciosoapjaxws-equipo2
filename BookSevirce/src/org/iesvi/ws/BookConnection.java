@@ -5,6 +5,8 @@ import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 import org.w3c.dom.Element;
+import util.Keyboard;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -27,7 +29,7 @@ public class BookConnection {
 
     public void addXmlData() throws Exception {
         DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document doc = documentBuilder.parse("examplesBooks.xml");
+        Document doc = documentBuilder.parse("repository/examplesBooks.xml");
         Element books = doc.getDocumentElement();
         Element book = doc.createElement("book");
         Element id = doc.createElement("id");
@@ -47,6 +49,20 @@ public class BookConnection {
         book.appendChild(condition);
         book.appendChild(prize);
 
-       // id.setTextContent();
+        id.setTextContent(Keyboard.getString("ID: "));
+        title.setTextContent(Keyboard.getString("TITLE: "));
+        author.setTextContent(Keyboard.getString("AUTHOR: "));
+        editorial.setTextContent(Keyboard.getString("EDITORIAL: "));
+        stock.setTextContent(Keyboard.getString("STOCK: "));
+        condition.setTextContent(Keyboard.getString("CONDITION: "));
+        prize.setTextContent(Keyboard.getString("PRIZE: "));
+    }
+
+    public void deleteXmlData() {
+        // TODO
+    }
+
+    public void updateXmlData() {
+        // TODO
     }
 }
