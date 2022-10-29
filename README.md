@@ -4,7 +4,7 @@
 
 ## BookService
 1. Create a new java project in IntelliJ IDE, with JDK version ***corretto-1.8.0_342***.
-2. Add a <span style="color:blue">Book Interface</span> with books attributes and indicate methods.
+2. Add a Book Interface with books attributes and indicate methods.
 3. Add a BookImpl Class that implements the Book Interface.
 4. Add a BookPublish where we create an endpoint for the service.
 5. Run the endpoint and write into the navigation bar of a navigator `http://localhost:1516/WS/Book?wsdl` to obtain the WSDL file.
