@@ -1,5 +1,9 @@
 # 2223_desarrolloserviciosoapjaxws-equipo2
-2223_desarrolloserviciosoapjaxws-equipo2 created by GitHub Classroom
+*2223_desarrolloserviciosoapjaxws-equipo2 created by GitHub Classroom*
+
+### Team members
+- Isabel María González Rodríguez
+- Sara Palma Rodríguez
 
 
 ## BookService
