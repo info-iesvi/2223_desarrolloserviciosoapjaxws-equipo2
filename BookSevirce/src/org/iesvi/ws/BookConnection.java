@@ -17,6 +17,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
+import static java.lang.Integer.parseInt;
+
 public class BookConnection {
 
     public Document readXml(String xmlName) throws Exception {
@@ -70,15 +72,21 @@ public class BookConnection {
         transformer.transform(source, result);
     }
 
-    public void deleteXmlData(String xmlName) throws Exception {
+    public void deleteXmlData(String xmlName, String idBook) throws Exception {
         Document document = readXml(xmlName);
         Element books = document.getDocumentElement();
 
-        NodeList bookList = books.getElementsByTagName("books");
-        Node item = bookList.item(Keyboard.getInteger("Which book do you want to delete? Insert the idBook: "));
+        NodeList bookList = books.getElementsByTagName("book");
+        Node item = bookList.item(parseInt(idBook));
 
-        // TODO: Controlar que exista el libro o no antes de borrarlo
-        books.removeChild(item);
+        for (int i = 0; i < bookList.getLength(); i++) {
+            Element element = (Element) bookList.item(i);
+            if (element.getAttribute("idBook").equalsIgnoreCase(idBook)) {
+                books.getParentNode().removeChild(item);
+            } else {
+                System.out.println("Book not found");
+            }
+        }
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         Source source = new DOMSource(document);
