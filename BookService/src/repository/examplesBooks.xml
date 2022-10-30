@@ -23,7 +23,7 @@
 
     <book>
         <idBook>3</idBook>
-        <title>Microservice Architecture</title>
+        <title>Microservices Architecture</title>
         <author>Joseph Lewis</author>
         <editorial>PSP</editorial>
         <stock>0</stock>
