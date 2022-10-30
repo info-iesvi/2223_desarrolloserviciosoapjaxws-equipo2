@@ -1,13 +1,13 @@
 package org.iesvi.ws;
 
+import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import org.w3c.dom.*;
-import org.xml.sax.SAXException;
 
 import util.Keyboard;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -15,6 +15,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static java.lang.Integer.parseInt;
@@ -33,6 +34,19 @@ public class BookConnection {
             e.printStackTrace();
         }
         return document;
+    }
+
+    public int saveXml(String xmlName) {
+        try {
+            Document document = readXml(xmlName);
+            OutputFormat format = new OutputFormat(document);
+            format.setIndenting(true);
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(xmlName), format);
+            serializer.serialize(document);
+            return 0;
+        } catch (Exception e) {
+            return -1;
+        }
     }
 
     public void addXmlData(String xmlName) throws Exception {
@@ -56,9 +70,25 @@ public class BookConnection {
         book.appendChild(condition);
         book.appendChild(prize);
 
-        idBook.setTextContent(Keyboard.getString("ID: "));
+        NodeList bookList = books.getElementsByTagName("book");
 
-        // TODO: Controlar que el idBook no exista para seguir pidiendo el resto de datos del libro
+        String id = Keyboard.getString("ID: ");
+        idBook.setTextContent(id);
+
+        for (int i = 0; i < bookList.getLength(); i++) {
+            Element element = (Element) bookList.item(i);
+            if (!(element.getAttribute("idBook").equalsIgnoreCase(id))) {
+                title.setTextContent(Keyboard.getString("TITLE: "));
+                author.setTextContent(Keyboard.getString("AUTHOR: "));
+                editorial.setTextContent(Keyboard.getString("EDITORIAL: "));
+                stock.setTextContent(Keyboard.getString("STOCK: "));
+                condition.setTextContent(Keyboard.getString("CONDITION: "));
+                prize.setTextContent(Keyboard.getString("PRIZE: "));
+            } else {
+                System.out.println("ID not found");
+            }
+        }
+
         title.setTextContent(Keyboard.getString("TITLE: "));
         author.setTextContent(Keyboard.getString("AUTHOR: "));
         editorial.setTextContent(Keyboard.getString("EDITORIAL: "));
@@ -70,6 +100,8 @@ public class BookConnection {
         Source source = new DOMSource(document);
         Result result = new StreamResult(xmlName);
         transformer.transform(source, result);
+
+        saveXml(xmlName);
     }
 
     public void deleteXmlData(String xmlName, String idBook) throws Exception {
@@ -92,6 +124,8 @@ public class BookConnection {
         Source source = new DOMSource(document);
         Result result = new StreamResult(xmlName);
         transformer.transform(source, result);
+
+        saveXml(xmlName);
     }
 
     public void updateXmlData(String xmlName, String idBook, String option) throws Exception {
@@ -99,21 +133,22 @@ public class BookConnection {
         Element books = document.getDocumentElement();
 
         NodeList bookList = books.getElementsByTagName("book");
-        Node item = bookList.item(parseInt(idBook));
 
         for(int i = 0; i < bookList.getLength(); i++){
             Element element = (Element) bookList.item(i);
             if (element.getAttribute("idBook").equalsIgnoreCase(idBook)){
                 if(option.compareToIgnoreCase("stock")==0){
-                    element.getAttribute("stock").replace(element.getAttribute("stock"), Keyboard.getString("New stock: "));
+                    element.setAttribute("stock", Keyboard.getString("New stock: "));
                 } else if (option.compareToIgnoreCase("prize")==0) {
-                    element.getAttribute("prize");
+                    element.setAttribute("prize", Keyboard.getString("New prize: "));
                 } else if (option.compareToIgnoreCase("condition")==0) {
-                    element.getAttribute("condition");
+                    element.setAttribute("condition", Keyboard.getString("New condition: "));
                 }
             } else {
                 System.out.println("Book not found");
             }
         }
+
+        saveXml(xmlName);
     }
 }
