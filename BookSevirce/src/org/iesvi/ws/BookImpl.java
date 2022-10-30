@@ -1,7 +1,9 @@
 package org.iesvi.ws;
 
 import javafx.scene.image.Image;
+import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+import util.Keyboard;
 
 import javax.jws.WebService;
 import javax.xml.bind.Element;
@@ -132,53 +134,96 @@ public class BookImpl implements Book{
 
     @Override
     public void consultBookByTitle(String title) {
-        if (title.equalsIgnoreCase(this.getTitle())) {
-            System.out.println(this);
-        } else {
+        try {
+            BookConnection conn = new BookConnection();
+            conn.readXml("repository/examplesBooks.xml");
+
+            if (title.equalsIgnoreCase(this.getTitle())) {
+                System.out.println(this);
+            }
+
+        } catch (Exception e) {
             System.out.println("Title not found");
         }
     }
 
     @Override
     public void consultBookByAuthor(String author) {
-        if (author.equalsIgnoreCase(this.author)) {
-            System.out.println(this);
-        } else {
+        try {
+            BookConnection conn = new BookConnection();
+            conn.readXml("repository/examplesBooks.xml");
+
+            if (author.equalsIgnoreCase(this.author)) {
+                System.out.println(this);
+            }
+
+        } catch (Exception e) {
             System.out.println("Author not found");
         }
     }
 
     @Override
     public void consultBookByEditorial(String editorial) {
-        if (editorial.equalsIgnoreCase(this.editorial)) {
-            System.out.println(this);
-        } else {
+        try {
+            BookConnection conn = new BookConnection();
+            conn.readXml("repository/examplesBooks.xml");
+
+            if (editorial.equalsIgnoreCase(this.editorial)) {
+                System.out.println(this);
+            }
+
+        } catch (Exception e) {
             System.out.println("Editorial not found");
         }
     }
 
     @Override
     public void consultBookList() {
-        List<Book> bookList = new ArrayList<>();
-        for(Book book:bookList){
-            System.out.println(book.toString());
+        try {
+            BookConnection conn = new BookConnection();
+            conn.showXmlData("repository/examplesBooks.xml");
+
+//            List<Book> bookList = new ArrayList<>();
+//            for(Book book : bookList){
+//                System.out.println(book.toString());
+//            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void addBook(BookImpl newBook) {
+        try {
+            BookConnection conn = new BookConnection();
+            conn.addXmlData("repository/examplesBooks.xml");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     @Override
-    public void addBook(BookImpl newBook) throws Exception {
-        newBook = new BookImpl("repository/examplesBooks.xml");
-
-    }
-
-    @Override
     public void deleteBook(BookImpl deletedBook) {
-
+        try {
+            BookConnection conn = new BookConnection();
+            conn.deleteXmlData("repository/examplesBooks.xml", Keyboard.getString("ID to delete: "));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void updateBook(BookImpl updatedBook) {
-
+        try {
+            BookConnection conn = new BookConnection();
+            conn.updateXmlData("repository/examplesBooks.xml",
+                    Keyboard.getString("ID to update: "),
+                    Keyboard.getString("What do you want to change? Write 'stock', 'prize' or 'condition': "));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 //    @Override
