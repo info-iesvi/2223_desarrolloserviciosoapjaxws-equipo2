@@ -6,12 +6,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para consultBookByAuthor complex type.
+ * <p>Clase Java para getBookByTitle complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="consultBookByAuthor">
+ * &lt;complexType name="getBookByTitle">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -25,10 +25,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "consultBookByAuthor", propOrder = {
+@XmlType(name = "getBookByTitle", propOrder = {
     "arg0"
 })
-public class ConsultBookByAuthor {
+public class GetBookByTitle {
 
     protected String arg0;
 

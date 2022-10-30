@@ -6,16 +6,16 @@ import javax.jws.WebService;
 @WebService
 public interface Book {
     @WebMethod
-    public void consultBookByTitle(String title);
+    public void getBookByTitle(String title);
 
     @WebMethod
-    public void consultBookByAuthor(String author);
+    public void getBookByAuthor(String author);
 
     @WebMethod
-    public void consultBookByEditorial(String editorial);
+    public void getBookByEditorial(String editorial);
 
     @WebMethod
-    public void consultBookList();
+    public void getBookList();
 
     @WebMethod
     public void addBook(BookImpl newBook);

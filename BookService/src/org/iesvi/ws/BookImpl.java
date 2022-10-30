@@ -115,7 +115,7 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void consultBookByTitle(String title) {
+    public void getBookByTitle(String title) {
         try {
             BookConnection conn = new BookConnection();
             conn.readXml("repository/examplesBooks.xml");
@@ -129,7 +129,7 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void consultBookByAuthor(String author) {
+    public void getBookByAuthor(String author) {
         try {
             BookConnection conn = new BookConnection();
             conn.readXml("repository/examplesBooks.xml");
@@ -144,7 +144,7 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void consultBookByEditorial(String editorial) {
+    public void getBookByEditorial(String editorial) {
         try {
             BookConnection conn = new BookConnection();
             conn.readXml("repository/examplesBooks.xml");
@@ -159,7 +159,7 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void consultBookList() {
+    public void getBookList() {
         try {
             BookConnection conn = new BookConnection();
             conn.showXmlData("repository/examplesBooks.xml");

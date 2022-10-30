@@ -23,20 +23,20 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ConsultBookByEditorial_QNAME = new QName("http://ws.iesvi.org/", "consultBookByEditorial");
-    private final static QName _ConsultBookList_QNAME = new QName("http://ws.iesvi.org/", "consultBookList");
+    private final static QName _GetBookByEditorial_QNAME = new QName("http://ws.iesvi.org/", "getBookByEditorial");
+    private final static QName _GetBookList_QNAME = new QName("http://ws.iesvi.org/", "getBookList");
     private final static QName _UpdateBook_QNAME = new QName("http://ws.iesvi.org/", "updateBook");
     private final static QName _AddBookResponse_QNAME = new QName("http://ws.iesvi.org/", "addBookResponse");
-    private final static QName _ConsultBookByAuthor_QNAME = new QName("http://ws.iesvi.org/", "consultBookByAuthor");
-    private final static QName _ConsultBookByAuthorResponse_QNAME = new QName("http://ws.iesvi.org/", "consultBookByAuthorResponse");
+    private final static QName _GetBookByAuthor_QNAME = new QName("http://ws.iesvi.org/", "getBookByAuthor");
+    private final static QName _GetBookByAuthorResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookByAuthorResponse");
     private final static QName _AddBook_QNAME = new QName("http://ws.iesvi.org/", "addBook");
-    private final static QName _ConsultBookByTitleResponse_QNAME = new QName("http://ws.iesvi.org/", "consultBookByTitleResponse");
-    private final static QName _ConsultBookByEditorialResponse_QNAME = new QName("http://ws.iesvi.org/", "consultBookByEditorialResponse");
-    private final static QName _ConsultBookListResponse_QNAME = new QName("http://ws.iesvi.org/", "consultBookListResponse");
+    private final static QName _GetBookByTitleResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookByTitleResponse");
+    private final static QName _GetBookByEditorialResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookByEditorialResponse");
+    private final static QName _GetBookListResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookListResponse");
     private final static QName _UpdateBookResponse_QNAME = new QName("http://ws.iesvi.org/", "updateBookResponse");
     private final static QName _DeleteBookResponse_QNAME = new QName("http://ws.iesvi.org/", "deleteBookResponse");
     private final static QName _DeleteBook_QNAME = new QName("http://ws.iesvi.org/", "deleteBook");
-    private final static QName _ConsultBookByTitle_QNAME = new QName("http://ws.iesvi.org/", "consultBookByTitle");
+    private final static QName _GetBookByTitle_QNAME = new QName("http://ws.iesvi.org/", "getBookByTitle");
 
     /**
      * Create a new org.iesvi.ws.ObjectFactory that can be used to create new instances of schema derived classes for package: org.iesvi.ws
@@ -54,19 +54,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConsultBookByEditorial }
+     * Create an instance of {@link GetBookByEditorial }
      * 
      */
-    public ConsultBookByEditorial createConsultBookByEditorial() {
-        return new ConsultBookByEditorial();
+    public GetBookByEditorial createGetBookByEditorial() {
+        return new GetBookByEditorial();
     }
 
     /**
-     * Create an instance of {@link ConsultBookList }
+     * Create an instance of {@link GetBookList }
      * 
      */
-    public ConsultBookList createConsultBookList() {
-        return new ConsultBookList();
+    public GetBookList createGetBookList() {
+        return new GetBookList();
     }
 
     /**
@@ -86,27 +86,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConsultBookByTitleResponse }
+     * Create an instance of {@link GetBookByTitleResponse }
      * 
      */
-    public ConsultBookByTitleResponse createConsultBookByTitleResponse() {
-        return new ConsultBookByTitleResponse();
+    public GetBookByTitleResponse createGetBookByTitleResponse() {
+        return new GetBookByTitleResponse();
     }
 
     /**
-     * Create an instance of {@link ConsultBookByAuthor }
+     * Create an instance of {@link GetBookByAuthor }
      * 
      */
-    public ConsultBookByAuthor createConsultBookByAuthor() {
-        return new ConsultBookByAuthor();
+    public GetBookByAuthor createGetBookByAuthor() {
+        return new GetBookByAuthor();
     }
 
     /**
-     * Create an instance of {@link ConsultBookByAuthorResponse }
+     * Create an instance of {@link GetBookByAuthorResponse }
      * 
      */
-    public ConsultBookByAuthorResponse createConsultBookByAuthorResponse() {
-        return new ConsultBookByAuthorResponse();
+    public GetBookByAuthorResponse createGetBookByAuthorResponse() {
+        return new GetBookByAuthorResponse();
     }
 
     /**
@@ -134,27 +134,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConsultBookByEditorialResponse }
+     * Create an instance of {@link GetBookByEditorialResponse }
      * 
      */
-    public ConsultBookByEditorialResponse createConsultBookByEditorialResponse() {
-        return new ConsultBookByEditorialResponse();
+    public GetBookByEditorialResponse createGetBookByEditorialResponse() {
+        return new GetBookByEditorialResponse();
     }
 
     /**
-     * Create an instance of {@link ConsultBookListResponse }
+     * Create an instance of {@link GetBookListResponse }
      * 
      */
-    public ConsultBookListResponse createConsultBookListResponse() {
-        return new ConsultBookListResponse();
+    public GetBookListResponse createGetBookListResponse() {
+        return new GetBookListResponse();
     }
 
     /**
-     * Create an instance of {@link ConsultBookByTitle }
+     * Create an instance of {@link GetBookByTitle }
      * 
      */
-    public ConsultBookByTitle createConsultBookByTitle() {
-        return new ConsultBookByTitle();
+    public GetBookByTitle createGetBookByTitle() {
+        return new GetBookByTitle();
     }
 
     /**
@@ -166,21 +166,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookByEditorial }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByEditorial }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookByEditorial")
-    public JAXBElement<ConsultBookByEditorial> createConsultBookByEditorial(ConsultBookByEditorial value) {
-        return new JAXBElement<ConsultBookByEditorial>(_ConsultBookByEditorial_QNAME, ConsultBookByEditorial.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByEditorial")
+    public JAXBElement<GetBookByEditorial> createGetBookByEditorial(GetBookByEditorial value) {
+        return new JAXBElement<GetBookByEditorial>(_GetBookByEditorial_QNAME, GetBookByEditorial.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookList }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookList }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookList")
-    public JAXBElement<ConsultBookList> createConsultBookList(ConsultBookList value) {
-        return new JAXBElement<ConsultBookList>(_ConsultBookList_QNAME, ConsultBookList.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookList")
+    public JAXBElement<GetBookList> createGetBookList(GetBookList value) {
+        return new JAXBElement<GetBookList>(_GetBookList_QNAME, GetBookList.class, null, value);
     }
 
     /**
@@ -202,21 +202,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookByAuthor }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByAuthor }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookByAuthor")
-    public JAXBElement<ConsultBookByAuthor> createConsultBookByAuthor(ConsultBookByAuthor value) {
-        return new JAXBElement<ConsultBookByAuthor>(_ConsultBookByAuthor_QNAME, ConsultBookByAuthor.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByAuthor")
+    public JAXBElement<GetBookByAuthor> createGetBookByAuthor(GetBookByAuthor value) {
+        return new JAXBElement<GetBookByAuthor>(_GetBookByAuthor_QNAME, GetBookByAuthor.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookByAuthorResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByAuthorResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookByAuthorResponse")
-    public JAXBElement<ConsultBookByAuthorResponse> createConsultBookByAuthorResponse(ConsultBookByAuthorResponse value) {
-        return new JAXBElement<ConsultBookByAuthorResponse>(_ConsultBookByAuthorResponse_QNAME, ConsultBookByAuthorResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByAuthorResponse")
+    public JAXBElement<GetBookByAuthorResponse> createGetBookByAuthorResponse(GetBookByAuthorResponse value) {
+        return new JAXBElement<GetBookByAuthorResponse>(_GetBookByAuthorResponse_QNAME, GetBookByAuthorResponse.class, null, value);
     }
 
     /**
@@ -229,30 +229,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookByTitleResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByTitleResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookByTitleResponse")
-    public JAXBElement<ConsultBookByTitleResponse> createConsultBookByTitleResponse(ConsultBookByTitleResponse value) {
-        return new JAXBElement<ConsultBookByTitleResponse>(_ConsultBookByTitleResponse_QNAME, ConsultBookByTitleResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByTitleResponse")
+    public JAXBElement<GetBookByTitleResponse> createGetBookByTitleResponse(GetBookByTitleResponse value) {
+        return new JAXBElement<GetBookByTitleResponse>(_GetBookByTitleResponse_QNAME, GetBookByTitleResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookByEditorialResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByEditorialResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookByEditorialResponse")
-    public JAXBElement<ConsultBookByEditorialResponse> createConsultBookByEditorialResponse(ConsultBookByEditorialResponse value) {
-        return new JAXBElement<ConsultBookByEditorialResponse>(_ConsultBookByEditorialResponse_QNAME, ConsultBookByEditorialResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByEditorialResponse")
+    public JAXBElement<GetBookByEditorialResponse> createGetBookByEditorialResponse(GetBookByEditorialResponse value) {
+        return new JAXBElement<GetBookByEditorialResponse>(_GetBookByEditorialResponse_QNAME, GetBookByEditorialResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookListResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookListResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookListResponse")
-    public JAXBElement<ConsultBookListResponse> createConsultBookListResponse(ConsultBookListResponse value) {
-        return new JAXBElement<ConsultBookListResponse>(_ConsultBookListResponse_QNAME, ConsultBookListResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookListResponse")
+    public JAXBElement<GetBookListResponse> createGetBookListResponse(GetBookListResponse value) {
+        return new JAXBElement<GetBookListResponse>(_GetBookListResponse_QNAME, GetBookListResponse.class, null, value);
     }
 
     /**
@@ -283,12 +283,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultBookByTitle }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByTitle }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "consultBookByTitle")
-    public JAXBElement<ConsultBookByTitle> createConsultBookByTitle(ConsultBookByTitle value) {
-        return new JAXBElement<ConsultBookByTitle>(_ConsultBookByTitle_QNAME, ConsultBookByTitle.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByTitle")
+    public JAXBElement<GetBookByTitle> createGetBookByTitle(GetBookByTitle value) {
+        return new JAXBElement<GetBookByTitle>(_GetBookByTitle_QNAME, GetBookByTitle.class, null, value);
     }
 
 }
