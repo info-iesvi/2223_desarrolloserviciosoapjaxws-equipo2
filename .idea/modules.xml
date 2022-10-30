@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/2223_desarrolloserviciosoapjaxws-equipo2.iml" filepath="$PROJECT_DIR$/.idea/2223_desarrolloserviciosoapjaxws-equipo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/BookClient/BookClient.iml" filepath="$PROJECT_DIR$/BookClient/BookClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/BookSevirce/BookSevirce.iml" filepath="$PROJECT_DIR$/BookSevirce/BookSevirce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BookService/BookService.iml" filepath="$PROJECT_DIR$/BookService/BookService.iml" />
     </modules>
   </component>
 </project>
