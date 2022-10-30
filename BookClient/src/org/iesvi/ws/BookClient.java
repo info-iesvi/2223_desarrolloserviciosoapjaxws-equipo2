@@ -19,12 +19,22 @@ public class BookClient {
         client.consultBookByEditorial("PSP");
 
         System.out.println("\n-- Añadir nuevo libro --");
+        book.setIdBook(4);
+        book.setTitle("HTML 5 and CSS 3");
+        book.setAuthor("Marc Josep");
+        book.setEditorial("Garceta");
+        book.setStock(3);
+        book.setCondition("Good");
+        book.setPrize(43.99);
         client.addBook(book);
 
         System.out.println("\n-- Modificar un libro --");
-        client.deleteBook(book);
+        book.getIdBook(1);
+        book.setEditorial("Paraninfo");
+        client.updateBook(book);
 
         System.out.println("\n-- Eliminar un libro --");
-        client.updateBook(book);
+        book.getIdBook(1);
+        client.deleteBook(book);
     }
 }

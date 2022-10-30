@@ -126,7 +126,7 @@ public class BookImpl {
      * Obtiene el valor de la propiedad idBook.
      * 
      */
-    public int getIdBook() {
+    public int getIdBook(int i) {
         return idBook;
     }
 
