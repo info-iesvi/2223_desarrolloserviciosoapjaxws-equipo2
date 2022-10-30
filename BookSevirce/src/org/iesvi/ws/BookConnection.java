@@ -94,8 +94,26 @@ public class BookConnection {
         transformer.transform(source, result);
     }
 
-    public void updateXmlData(String xmlName) throws Exception {
+    public void updateXmlData(String xmlName, String idBook, String option) throws Exception {
         Document document = readXml(xmlName);
-        // TODO
+        Element books = document.getDocumentElement();
+
+        NodeList bookList = books.getElementsByTagName("book");
+        Node item = bookList.item(parseInt(idBook));
+
+        for(int i = 0; i < bookList.getLength(); i++){
+            Element element = (Element) bookList.item(i);
+            if (element.getAttribute("idBook").equalsIgnoreCase(idBook)){
+                if(option.compareToIgnoreCase("stock")==0){
+                    element.getAttribute("stock").replace(element.getAttribute("stock"), Keyboard.getString("New stock: "));
+                } else if (option.compareToIgnoreCase("prize")==0) {
+                    element.getAttribute("prize");
+                } else if (option.compareToIgnoreCase("condition")==0) {
+                    element.getAttribute("condition");
+                }
+            } else {
+                System.out.println("Book not found");
+            }
+        }
     }
 }
