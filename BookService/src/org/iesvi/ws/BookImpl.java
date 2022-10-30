@@ -94,7 +94,7 @@ public class BookImpl implements Book {
     @Override
     public String toString() {
         try {
-            BookImpl book = new BookImpl("examplesBooks");
+            BookImpl book = new BookImpl("examplesBooks.xml");
             this.idBook = book.idBook;
             this.stock = book.stock;
             this.author = book.author;
@@ -118,7 +118,7 @@ public class BookImpl implements Book {
     public void getBookByTitle(String title) {
         try {
             BookConnection conn = new BookConnection();
-            conn.readXml("repository/examplesBooks.xml");
+            conn.readXml("./repository/examplesBooks.xml");
 
             if (title.equalsIgnoreCase(this.getTitle())) {
                 System.out.println(this);
@@ -132,7 +132,7 @@ public class BookImpl implements Book {
     public void getBookByAuthor(String author) {
         try {
             BookConnection conn = new BookConnection();
-            conn.readXml("repository/examplesBooks.xml");
+            conn.readXml("./repository/examplesBooks.xml");
 
             if (author.equalsIgnoreCase(this.author)) {
                 System.out.println(this);
@@ -147,7 +147,7 @@ public class BookImpl implements Book {
     public void getBookByEditorial(String editorial) {
         try {
             BookConnection conn = new BookConnection();
-            conn.readXml("repository/examplesBooks.xml");
+            conn.readXml("./repository/examplesBooks.xml");
 
             if (editorial.equalsIgnoreCase(this.editorial)) {
                 System.out.println(this);
@@ -162,7 +162,7 @@ public class BookImpl implements Book {
     public void getBookList() {
         try {
             BookConnection conn = new BookConnection();
-            conn.showXmlData("repository/examplesBooks.xml");
+            conn.showXmlData("./repository/examplesBooks.xml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -173,7 +173,7 @@ public class BookImpl implements Book {
     public void addBook(BookImpl newBook) {
         try {
             BookConnection conn = new BookConnection();
-            conn.addXmlData("repository/examplesBooks.xml");
+            conn.addXmlData("./repository/examplesBooks.xml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -183,7 +183,7 @@ public class BookImpl implements Book {
     public void deleteBook(BookImpl deletedBook) {
         try {
             BookConnection conn = new BookConnection();
-            conn.deleteXmlData("repository/examplesBooks.xml", Keyboard.getString("ID to delete: "));
+            conn.deleteXmlData("./repository/examplesBooks.xml", Keyboard.getString("ID to delete: "));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -193,7 +193,7 @@ public class BookImpl implements Book {
     public void updateBook(BookImpl updatedBook) {
         try {
             BookConnection conn = new BookConnection();
-            conn.updateXmlData("repository/examplesBooks.xml",
+            conn.updateXmlData("./repository/examplesBooks.xml",
                     Keyboard.getString("ID to update: "),
                     Keyboard.getString("What do you want to change? Write 'stock', 'prize' or 'condition': "));
         } catch (Exception e) {

@@ -13,7 +13,7 @@
 4. Add a BookPublish where we create an endpoint for the service.
 5. Run the endpoint and write into the navigation bar of a browser `http://localhost:1516/WS/org.iesvi.ws.Book?wsdl` to check the WS Definitions.
 
-## org.iesvi.ws.BookClient
+## BookClient
 1. Generate the client code with the command `wsimport -s . http://localhost:1516/WS/org.iesvi.ws.Book?wsdl`
 <br> **NOTE:** If you use Windows make sure that wsimport is in the system PATH or write the full path where it is located.
 2. Copy the .java files into the **src** directory.
