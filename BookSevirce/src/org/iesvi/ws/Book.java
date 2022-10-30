@@ -38,7 +38,7 @@ public interface Book {
 //    @WebMethod
 //    public void buyBook(String option);
     @WebMethod
-    public void addBook(BookImpl newBook) throws ParserConfigurationException, SAXException;
+    public void addBook(BookImpl newBook) throws ParserConfigurationException, SAXException, Exception;
 
     @WebMethod
     public void deleteBook(BookImpl deletedBook);

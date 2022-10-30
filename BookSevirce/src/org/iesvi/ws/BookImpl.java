@@ -38,7 +38,7 @@ public class BookImpl implements Book{
         this.prize = prize;
     }
 
-    public BookImpl(String xmlName) throws ParserConfigurationException, SAXException {
+    public BookImpl(String xmlName) throws Exception {
         BookConnection conn = new BookConnection();
         conn.readXml(xmlName);
     }
@@ -118,9 +118,7 @@ public class BookImpl implements Book{
             this.editorial = book.editorial;
             this.prize = book.prize;
             this.condition = book.condition;
-        } catch (ParserConfigurationException e) {
-            throw new RuntimeException(e);
-        } catch (SAXException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
@@ -168,7 +166,7 @@ public class BookImpl implements Book{
     }
 
     @Override
-    public void addBook(BookImpl newBook) throws ParserConfigurationException, SAXException {
+    public void addBook(BookImpl newBook) throws Exception {
         newBook = new BookImpl("repository/examplesBooks.xml");
 
     }

@@ -1,10 +1,8 @@
 package org.iesvi.ws;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
-import org.w3c.dom.Element;
 import util.Keyboard;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -21,30 +19,31 @@ import java.io.IOException;
 
 public class BookConnection {
 
-    public void readXml(String xmlName) throws ParserConfigurationException, SAXException {
+    public Document readXml(String xmlName) throws Exception {
+        Document document = null;
         try {
             File file = new File(xmlName);
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(file);
+            document = documentBuilder.parse(file);
             document.getDocumentElement().normalize();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        return document;
     }
 
-    public void addXmlData() throws Exception {
-        DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document doc = documentBuilder.parse("repository/examplesBooks.xml");
-        Element books = doc.getDocumentElement();
-        Element book = doc.createElement("book");
-        Element idBook = doc.createElement("id");
-        Element title = doc.createElement("title");
-        Element author = doc.createElement("author");
-        Element editorial = doc.createElement("editorial");
-        Element stock = doc.createElement("stock");
-        Element condition = doc.createElement("condition");
-        Element prize = doc.createElement("prize");
+    public void addXmlData(String xmlName) throws Exception {
+        Document document = readXml(xmlName);
+        Element books = document.getDocumentElement();
+        Element book = document.createElement("book");
+        Element idBook = document.createElement("id");
+        Element title = document.createElement("title");
+        Element author = document.createElement("author");
+        Element editorial = document.createElement("editorial");
+        Element stock = document.createElement("stock");
+        Element condition = document.createElement("condition");
+        Element prize = document.createElement("prize");
 
         books.appendChild(book);
         book.appendChild(idBook);
@@ -56,6 +55,8 @@ public class BookConnection {
         book.appendChild(prize);
 
         idBook.setTextContent(Keyboard.getString("ID: "));
+
+        // TODO: Controlar que el idBook no exista para seguir pidiendo el resto de datos del libro
         title.setTextContent(Keyboard.getString("TITLE: "));
         author.setTextContent(Keyboard.getString("AUTHOR: "));
         editorial.setTextContent(Keyboard.getString("EDITORIAL: "));
@@ -64,16 +65,29 @@ public class BookConnection {
         prize.setTextContent(Keyboard.getString("PRIZE: "));
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        Source source = new DOMSource(doc);
-        Result result = new StreamResult("repository/examplesBooks.xml");
+        Source source = new DOMSource(document);
+        Result result = new StreamResult(xmlName);
         transformer.transform(source, result);
     }
 
-    public void deleteXmlData() {
-        // TODO
+    public void deleteXmlData(String xmlName) throws Exception {
+        Document document = readXml(xmlName);
+        Element books = document.getDocumentElement();
+
+        NodeList bookList = books.getElementsByTagName("books");
+        Node item = bookList.item(Keyboard.getInteger("Which book do you want to delete? Insert the idBook: "));
+
+        // TODO: Controlar que exista el libro o no antes de borrarlo
+        books.removeChild(item);
+
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Source source = new DOMSource(document);
+        Result result = new StreamResult(xmlName);
+        transformer.transform(source, result);
     }
 
-    public void updateXmlData() {
+    public void updateXmlData(String xmlName) throws Exception {
+        Document document = readXml(xmlName);
         // TODO
     }
 }
