@@ -27,8 +27,8 @@ public interface Book {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "consultBookByAuthor", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookByAuthor")
-    @ResponseWrapper(localName = "consultBookByAuthorResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookByAuthorResponse")
+    @RequestWrapper(localName = "consultBookByAuthor", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookByAuthor")
+    @ResponseWrapper(localName = "consultBookByAuthorResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookByAuthorResponse")
     @Action(input = "http://ws.iesvi.org/Book/consultBookByAuthorRequest", output = "http://ws.iesvi.org/Book/consultBookByAuthorResponse")
     public void consultBookByAuthor(
         @WebParam(name = "arg0", targetNamespace = "")
@@ -39,8 +39,8 @@ public interface Book {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "consultBookByEditorial", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookByEditorial")
-    @ResponseWrapper(localName = "consultBookByEditorialResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookByEditorialResponse")
+    @RequestWrapper(localName = "consultBookByEditorial", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookByEditorial")
+    @ResponseWrapper(localName = "consultBookByEditorialResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookByEditorialResponse")
     @Action(input = "http://ws.iesvi.org/Book/consultBookByEditorialRequest", output = "http://ws.iesvi.org/Book/consultBookByEditorialResponse")
     public void consultBookByEditorial(
         @WebParam(name = "arg0", targetNamespace = "")
@@ -51,8 +51,8 @@ public interface Book {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "consultBookByTitle", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookByTitle")
-    @ResponseWrapper(localName = "consultBookByTitleResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookByTitleResponse")
+    @RequestWrapper(localName = "consultBookByTitle", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookByTitle")
+    @ResponseWrapper(localName = "consultBookByTitleResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookByTitleResponse")
     @Action(input = "http://ws.iesvi.org/Book/consultBookByTitleRequest", output = "http://ws.iesvi.org/Book/consultBookByTitleResponse")
     public void consultBookByTitle(
         @WebParam(name = "arg0", targetNamespace = "")
@@ -63,8 +63,8 @@ public interface Book {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "deleteBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.DeleteBook")
-    @ResponseWrapper(localName = "deleteBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.DeleteBookResponse")
+    @RequestWrapper(localName = "deleteBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBook")
+    @ResponseWrapper(localName = "deleteBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookResponse")
     @Action(input = "http://ws.iesvi.org/Book/deleteBookRequest", output = "http://ws.iesvi.org/Book/deleteBookResponse")
     public void deleteBook(
         @WebParam(name = "arg0", targetNamespace = "")
@@ -75,8 +75,8 @@ public interface Book {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "updateBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.UpdateBook")
-    @ResponseWrapper(localName = "updateBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.UpdateBookResponse")
+    @RequestWrapper(localName = "updateBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.UpdateBook")
+    @ResponseWrapper(localName = "updateBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.UpdateBookResponse")
     @Action(input = "http://ws.iesvi.org/Book/updateBookRequest", output = "http://ws.iesvi.org/Book/updateBookResponse")
     public void updateBook(
         @WebParam(name = "arg0", targetNamespace = "")
@@ -86,8 +86,8 @@ public interface Book {
      * 
      */
     @WebMethod
-    @RequestWrapper(localName = "consultBookList", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookList")
-    @ResponseWrapper(localName = "consultBookListResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.ConsultBookListResponse")
+    @RequestWrapper(localName = "consultBookList", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookList")
+    @ResponseWrapper(localName = "consultBookListResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.ConsultBookListResponse")
     @Action(input = "http://ws.iesvi.org/Book/consultBookListRequest", output = "http://ws.iesvi.org/Book/consultBookListResponse")
     public void consultBookList();
 
@@ -96,8 +96,8 @@ public interface Book {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "addBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.AddBook")
-    @ResponseWrapper(localName = "addBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.org.iesvi.ws.AddBookResponse")
+    @RequestWrapper(localName = "addBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.AddBook")
+    @ResponseWrapper(localName = "addBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.AddBookResponse")
     @Action(input = "http://ws.iesvi.org/Book/addBookRequest", output = "http://ws.iesvi.org/Book/addBookResponse")
     public void addBook(
         @WebParam(name = "arg0", targetNamespace = "")

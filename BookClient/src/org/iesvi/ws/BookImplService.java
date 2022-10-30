@@ -16,14 +16,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "org.iesvi.ws.BookImplService", targetNamespace = "http://ws.iesvi.org/", wsdlLocation = "http://localhost:1516/WS/Book?wsdl")
+@WebServiceClient(name = "BookImplService", targetNamespace = "http://ws.iesvi.org/", wsdlLocation = "http://localhost:1516/WS/Book?wsdl")
 public class BookImplService
     extends Service
 {
 
     private final static URL BOOKIMPLSERVICE_WSDL_LOCATION;
     private final static WebServiceException BOOKIMPLSERVICE_EXCEPTION;
-    private final static QName BOOKIMPLSERVICE_QNAME = new QName("http://ws.iesvi.org/", "org.iesvi.ws.BookImplService");
+    private final static QName BOOKIMPLSERVICE_QNAME = new QName("http://ws.iesvi.org/", "BookImplService");
 
     static {
         URL url = null;
