@@ -17,5 +17,5 @@
 1. Start the book service with the command `wsimport -s . http://localhost:1516/WS/Book?wsdl`
 <br> **NOTE:** If you use Windows make sure that wsimport is in the system PATH and write the path where it is located.
 2. Copy the .java files into the **src** directory.
-3. Add a BookCustomer Class where we use the generated classes.
+3. Add a BookClient Class where we use the generated classes.
 4. In order to run the costumer, the service must be running.
