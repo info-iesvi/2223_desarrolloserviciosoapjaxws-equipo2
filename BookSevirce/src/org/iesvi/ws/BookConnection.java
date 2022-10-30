@@ -17,6 +17,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static java.lang.Integer.parseInt;
 
@@ -41,7 +43,7 @@ public class BookConnection {
             Document document = readXml(xmlName);
             OutputFormat format = new OutputFormat(document);
             format.setIndenting(true);
-            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(xmlName), format);
+            XMLSerializer serializer = new XMLSerializer(Files.newOutputStream(Paths.get(xmlName)), format);
             serializer.serialize(document);
             return 0;
         } catch (Exception e) {
@@ -85,16 +87,9 @@ public class BookConnection {
                 condition.setTextContent(Keyboard.getString("CONDITION: "));
                 prize.setTextContent(Keyboard.getString("PRIZE: "));
             } else {
-                System.out.println("ID not found");
+                System.out.println("The book with this id already exists");
             }
         }
-
-        title.setTextContent(Keyboard.getString("TITLE: "));
-        author.setTextContent(Keyboard.getString("AUTHOR: "));
-        editorial.setTextContent(Keyboard.getString("EDITORIAL: "));
-        stock.setTextContent(Keyboard.getString("STOCK: "));
-        condition.setTextContent(Keyboard.getString("CONDITION: "));
-        prize.setTextContent(Keyboard.getString("PRIZE: "));
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         Source source = new DOMSource(document);
