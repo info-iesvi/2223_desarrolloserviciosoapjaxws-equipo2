@@ -8,5 +8,6 @@ import javax.xml.ws.Endpoint;
 public class BookPublish {
     public static void main (String[] args) {
         Endpoint.publish("http://localhost:1516/WS/Book", new BookImpl());
+        System.out.println("Active service, waiting for requests...");
     }
 }
