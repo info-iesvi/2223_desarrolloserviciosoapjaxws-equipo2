@@ -10,6 +10,12 @@ import util.Keyboard;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
@@ -32,7 +38,7 @@ public class BookConnection {
         Document doc = documentBuilder.parse("repository/examplesBooks.xml");
         Element books = doc.getDocumentElement();
         Element book = doc.createElement("book");
-        Element id = doc.createElement("id");
+        Element idBook = doc.createElement("id");
         Element title = doc.createElement("title");
         Element author = doc.createElement("author");
         Element editorial = doc.createElement("editorial");
@@ -41,7 +47,7 @@ public class BookConnection {
         Element prize = doc.createElement("prize");
 
         books.appendChild(book);
-        book.appendChild(id);
+        book.appendChild(idBook);
         book.appendChild(title);
         book.appendChild(author);
         book.appendChild(editorial);
@@ -49,13 +55,18 @@ public class BookConnection {
         book.appendChild(condition);
         book.appendChild(prize);
 
-        id.setTextContent(Keyboard.getString("ID: "));
+        idBook.setTextContent(Keyboard.getString("ID: "));
         title.setTextContent(Keyboard.getString("TITLE: "));
         author.setTextContent(Keyboard.getString("AUTHOR: "));
         editorial.setTextContent(Keyboard.getString("EDITORIAL: "));
         stock.setTextContent(Keyboard.getString("STOCK: "));
         condition.setTextContent(Keyboard.getString("CONDITION: "));
         prize.setTextContent(Keyboard.getString("PRIZE: "));
+
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Source source = new DOMSource(doc);
+        Result result = new StreamResult("repository/examplesBooks.xml");
+        transformer.transform(source, result);
     }
 
     public void deleteXmlData() {
