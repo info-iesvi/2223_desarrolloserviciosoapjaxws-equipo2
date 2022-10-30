@@ -17,7 +17,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -25,7 +24,6 @@ import java.nio.file.Paths;
 import static java.lang.Integer.parseInt;
 
 public class BookConnection {
-
     public Document readXml(String xmlName) {
         Document document = null;
         try {
@@ -191,6 +189,5 @@ public class BookConnection {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
 }

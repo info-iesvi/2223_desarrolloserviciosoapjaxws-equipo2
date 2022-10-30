@@ -1,21 +1,12 @@
 package org.iesvi.ws;
 
-import javafx.scene.image.Image;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 import util.Keyboard;
 
 import javax.jws.WebService;
-import javax.xml.bind.Element;
-import javax.xml.parsers.ParserConfigurationException;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebService(endpointInterface = "org.iesvi.ws.Book")
-public class BookImpl implements Book{
-
+public class BookImpl implements Book {
     private int idBook;
-    //private Image frontPage;
     private String title;
     private String author;
     private String editorial;
@@ -26,12 +17,11 @@ public class BookImpl implements Book{
     /**
      * Default constructor
      */
-    public BookImpl() {}
+    public BookImpl() {
+    }
 
     public BookImpl(String title, String author, String editorial, int stock, String condition, double prize) {
-
         this.idBook = 0;
-//        this.frontPage = frontPage;
         this.title = title;
         this.author = author;
         this.editorial = editorial;
@@ -40,7 +30,7 @@ public class BookImpl implements Book{
         this.prize = prize;
     }
 
-    public BookImpl(String xmlName) throws Exception {
+    public BookImpl(String xmlName) {
         BookConnection conn = new BookConnection();
         conn.readXml(xmlName);
     }
@@ -52,14 +42,6 @@ public class BookImpl implements Book{
     public void setIdBook(int idBook) {
         this.idBook = idBook;
     }
-
-//    public Image getFrontPage() {
-//        return frontPage;
-//    }
-//
-//    public void setFrontPage(Image frontPage) {
-//        this.frontPage = frontPage;
-//    }
 
     public String getTitle() {
         return title;
@@ -141,7 +123,6 @@ public class BookImpl implements Book{
             if (title.equalsIgnoreCase(this.getTitle())) {
                 System.out.println(this);
             }
-
         } catch (Exception e) {
             System.out.println("Title not found");
         }
@@ -182,12 +163,6 @@ public class BookImpl implements Book{
         try {
             BookConnection conn = new BookConnection();
             conn.showXmlData("repository/examplesBooks.xml");
-
-//            List<Book> bookList = new ArrayList<>();
-//            for(Book book : bookList){
-//                System.out.println(book.toString());
-//            }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -225,26 +200,4 @@ public class BookImpl implements Book{
             e.printStackTrace();
         }
     }
-
-//    @Override
-//    public void buyBook(String option) {
-//        if(option.compareToIgnoreCase(getAuthor())==0){
-//            if(getStock()>0){
-//                consultBookByAuthor(option);
-//            }
-//        } else if (option.compareToIgnoreCase(getEditorial())==0) {
-//            if(getStock()>0){
-//                consultBookByAuthor(option);
-//            }
-//        } else if (option.compareToIgnoreCase(getTitle())==0) {
-//            if(getStock()>0){
-//                consultBookByAuthor(option);
-//            }
-//        }else {
-//            System.out.println("Book not found");
-//        }
-//        //We use a xml file to search the data
-//    }
-
-
 }
