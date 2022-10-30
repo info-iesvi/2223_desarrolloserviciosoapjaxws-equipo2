@@ -11,11 +11,11 @@
 2. Add a Book Interface with books attributes and indicate methods.
 3. Add a BookImpl Class that implements the Book Interface.
 4. Add a BookPublish where we create an endpoint for the service.
-5. Run the endpoint and write into the navigation bar of a navigator `http://localhost:1516/WS/Book?wsdl` to obtain the WSDL file.
+5. Run the endpoint and write into the navigation bar of a browser `http://localhost:1516/WS/Book?wsdl` to check the WS Definitions.
 
-## ConsumerService
-1. Start the book service with the command `wsimport -s . http://localhost:1516/WS/Book?wsdl`
-<br> **NOTE:** If you use Windows make sure that wsimport is in the system PATH and write the path where it is located.
+## BookClient
+1. Generate the client code with the command `wsimport -s . http://localhost:1516/WS/Book?wsdl`
+<br> **NOTE:** If you use Windows make sure that wsimport is in the system PATH or write the full path where it is located.
 2. Copy the .java files into the **src** directory.
 3. Add a BookClient Class where we use the generated classes.
-4. In order to run the costumer, the service must be running.
+4. In order to run the client, the service must be running.
