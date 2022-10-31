@@ -2,117 +2,64 @@ package org.iesvi.ws;
 
 import util.Keyboard;
 
+import javax.jws.WebParam;
 import javax.jws.WebService;
+
+import static org.iesvi.ws.BookModel.*;
 
 @WebService(endpointInterface = "org.iesvi.ws.Book")
 public class BookImpl implements Book {
-    private int idBook;
-    private String title;
-    private String author;
-    private String editorial;
-    private int stock;
-    private String condition;
-    private double prize;
+//    private int idBook;
+//    private String title;
+//    private String author;
+//    private String editorial;
+//    private int stock;
+//    private String condition;
+//    private double prize;
 
     /**
      * Default constructor
      */
-    public BookImpl() {
-    }
+//    public BookImpl() {
+//    }
 
-    public BookImpl(String title, String author, String editorial, int stock, String condition, double prize) {
-        this.idBook = 0;
-        this.title = title;
-        this.author = author;
-        this.editorial = editorial;
-        this.stock = stock;
-        this.condition = condition;
-        this.prize = prize;
-    }
+//    public BookImpl(String title, String author, String editorial, int stock, String condition, double prize) {
+//        this.idBook = 0;
+//        this.title = title;
+//        this.author = author;
+//        this.editorial = editorial;
+//        this.stock = stock;
+//        this.condition = condition;
+//        this.prize = prize;
+//    }
 
     public BookImpl(String xmlName) {
         BookConnection conn = new BookConnection();
         conn.readXml(xmlName);
     }
 
-    public int getIdBook() {
-        return idBook;
-    }
-
-    public void setIdBook(int idBook) {
-        this.idBook = idBook;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
-    public double getPrize() {
-        return prize;
-    }
-
-    public void setPrize(double prize) {
-        this.prize = prize;
-    }
-
-    @Override
-    public String toString() {
-        try {
-            BookImpl book = new BookImpl("examplesBooks.xml");
-            this.idBook = book.idBook;
-            this.stock = book.stock;
-            this.author = book.author;
-            this.title = book.title;
-            this.editorial = book.editorial;
-            this.prize = book.prize;
-            this.condition = book.condition;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        return "\nID: " + this.idBook + " | \tTITLE: " + this.title +
-                "\n\tAUTHOR: " + this.author +
-                "\n\tEDITORIAL: " + this.editorial + '\'' +
-                "\n\tSTOCK: " + this.stock +
-                "\n\tCONDITION: " + this.condition + '\'' +
-                "\n\tPRIZE: £" + this.prize;
-    }
+//    @Override
+//    public String toString() {
+//        try {
+//            BookImpl book = new BookImpl("examplesBooks.xml");
+//            this.idBook = book.idBook;
+//            this.stock = book.stock;
+//            this.author = book.author;
+//            this.title = book.title;
+//            this.editorial = book.editorial;
+//            this.prize = book.prize;
+//            this.condition = book.condition;
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        return "\nID: " + this.idBook + " | \tTITLE: " + this.title +
+//                "\n\tAUTHOR: " + this.author +
+//                "\n\tEDITORIAL: " + this.editorial + '\'' +
+//                "\n\tSTOCK: " + this.stock +
+//                "\n\tCONDITION: " + this.condition + '\'' +
+//                "\n\tPRIZE: £" + this.prize;
+//    }
 
     @Override
     public void getBookByTitle(String title) {
@@ -120,7 +67,7 @@ public class BookImpl implements Book {
             BookConnection conn = new BookConnection();
             conn.readXml("./repository/examplesBooks.xml");
 
-            if (title.equalsIgnoreCase(this.getTitle())) {
+            if (title.equalsIgnoreCase(getTitle())) {
                 System.out.println(this);
             }
         } catch (Exception e) {
@@ -134,7 +81,7 @@ public class BookImpl implements Book {
             BookConnection conn = new BookConnection();
             conn.readXml("./repository/examplesBooks.xml");
 
-            if (author.equalsIgnoreCase(this.author)) {
+            if (author.equalsIgnoreCase(getAuthor())) {
                 System.out.println(this);
             }
 
@@ -149,7 +96,7 @@ public class BookImpl implements Book {
             BookConnection conn = new BookConnection();
             conn.readXml("./repository/examplesBooks.xml");
 
-            if (editorial.equalsIgnoreCase(this.editorial)) {
+            if (editorial.equalsIgnoreCase(BookModel.getEditorial())) {
                 System.out.println(this);
             }
 
@@ -170,7 +117,8 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void addBook(BookImpl newBook) {
+    public void addBook(@WebParam (new BookModel(getTitle(), getAuthor(), getEditorial(),
+            getStock(), getCondition(), getPrize())) BookModel book) {
         try {
             BookConnection conn = new BookConnection();
             conn.addXmlData("./repository/examplesBooks.xml");

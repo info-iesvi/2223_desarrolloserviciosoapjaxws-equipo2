@@ -18,11 +18,11 @@ public interface Book {
     public void getBookList();
 
     @WebMethod
-    public void addBook(BookImpl newBook);
+    public void addBook(BookModel newBook);
 
     @WebMethod
-    public void deleteBook(BookImpl deletedBook);
+    public void deleteBook(BookModel deletedBook);
 
     @WebMethod
-    public void updateBook(BookImpl updatedBook);
+    public void updateBook(BookModel updatedBook);
 }
