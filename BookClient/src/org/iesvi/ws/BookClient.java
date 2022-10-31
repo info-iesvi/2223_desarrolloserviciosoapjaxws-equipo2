@@ -6,16 +6,16 @@ public class BookClient {
         Book client = bookService.getBookImplPort();
         BookImpl book = new BookImpl();
 
-        System.out.println("\n-- Getar lista completa --");
+        System.out.println("\n-- Consultar lista completa --");
         client.getBookList();
 
-        System.out.println("\n-- Getar por Autor --");
+        System.out.println("\n-- Consultar por Autor --");
         client.getBookByAuthor("J.J. Williams");
 
-        System.out.println("\n-- Getar por Título --");
+        System.out.println("\n-- Consultar por Título --");
         client.getBookByTitle("Microservices Architecture");
 
-        System.out.println("\n-- Getar por Editorial --");
+        System.out.println("\n-- Consultar por Editorial --");
         client.getBookByEditorial("PSP");
 
         System.out.println("\n-- Añadir nuevo libro --");
