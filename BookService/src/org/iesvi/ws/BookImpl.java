@@ -9,57 +9,57 @@ import static org.iesvi.ws.BookModel.*;
 
 @WebService(endpointInterface = "org.iesvi.ws.Book")
 public class BookImpl implements Book {
-//    private int idBook;
-//    private String title;
-//    private String author;
-//    private String editorial;
-//    private int stock;
-//    private String condition;
-//    private double prize;
+    private int idBook;
+    private String title;
+    private String author;
+    private String editorial;
+    private int stock;
+    private String condition;
+    private double prize;
 
     /**
      * Default constructor
      */
-//    public BookImpl() {
-//    }
+    public BookImpl() {
+    }
 
-//    public BookImpl(String title, String author, String editorial, int stock, String condition, double prize) {
-//        this.idBook = 0;
-//        this.title = title;
-//        this.author = author;
-//        this.editorial = editorial;
-//        this.stock = stock;
-//        this.condition = condition;
-//        this.prize = prize;
-//    }
+    public BookImpl(String title, String author, String editorial, int stock, String condition, double prize) {
+        this.idBook = 0;
+        this.title = title;
+        this.author = author;
+        this.editorial = editorial;
+        this.stock = stock;
+        this.condition = condition;
+        this.prize = prize;
+    }
 
     public BookImpl(String xmlName) {
         BookConnection conn = new BookConnection();
         conn.readXml(xmlName);
     }
 
-//    @Override
-//    public String toString() {
-//        try {
-//            BookImpl book = new BookImpl("examplesBooks.xml");
-//            this.idBook = book.idBook;
-//            this.stock = book.stock;
-//            this.author = book.author;
-//            this.title = book.title;
-//            this.editorial = book.editorial;
-//            this.prize = book.prize;
-//            this.condition = book.condition;
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        return "\nID: " + this.idBook + " | \tTITLE: " + this.title +
-//                "\n\tAUTHOR: " + this.author +
-//                "\n\tEDITORIAL: " + this.editorial + '\'' +
-//                "\n\tSTOCK: " + this.stock +
-//                "\n\tCONDITION: " + this.condition + '\'' +
-//                "\n\tPRIZE: £" + this.prize;
-//    }
+    @Override
+    public String toString() {
+        try {
+            BookImpl book = new BookImpl("examplesBooks.xml");
+            this.idBook = book.idBook;
+            this.stock = book.stock;
+            this.author = book.author;
+            this.title = book.title;
+            this.editorial = book.editorial;
+            this.prize = book.prize;
+            this.condition = book.condition;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return "\nID: " + this.idBook + " | \tTITLE: " + this.title +
+                "\n\tAUTHOR: " + this.author +
+                "\n\tEDITORIAL: " + this.editorial + '\'' +
+                "\n\tSTOCK: " + this.stock +
+                "\n\tCONDITION: " + this.condition + '\'' +
+                "\n\tPRIZE: £" + this.prize;
+    }
 
     @Override
     public void getBookByTitle(String title) {
@@ -117,8 +117,7 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void addBook(@WebParam (new BookModel(getTitle(), getAuthor(), getEditorial(),
-            getStock(), getCondition(), getPrize())) BookModel book) {
+    public void addBook(BookModel newBook) {
         try {
             BookConnection conn = new BookConnection();
             conn.addXmlData("./repository/examplesBooks.xml");
@@ -128,7 +127,7 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void deleteBook(BookImpl deletedBook) {
+    public void deleteBook(BookModel deletedBook) {
         try {
             BookConnection conn = new BookConnection();
             conn.deleteXmlData("./repository/examplesBooks.xml", Keyboard.getString("ID to delete: "));
@@ -138,7 +137,7 @@ public class BookImpl implements Book {
     }
 
     @Override
-    public void updateBook(BookImpl updatedBook) {
+    public void updateBook(BookModel updatedBook) {
         try {
             BookConnection conn = new BookConnection();
             conn.updateXmlData("./repository/examplesBooks.xml",
@@ -148,4 +147,5 @@ public class BookImpl implements Book {
             e.printStackTrace();
         }
     }
+
 }
