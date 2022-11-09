@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="161f6dfb-540a-4ba3-a1d7-4d22c5176ea9" name="Changes" comment="Corrections to definition and implementation of the WS in the Client.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/AddBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/AddBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookById.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookById.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookByPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookByPosition.class" afterDir="false" />
+    <list default="true" id="161f6dfb-540a-4ba3-a1d7-4d22c5176ea9" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/BookClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/iesvi/ws/BookClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668036451126</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changes">
+      <created>1668037518426</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668037518426</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +157,7 @@
     <MESSAGE value="Add .gitignore" />
     <MESSAGE value="Added BookClient testing." />
     <MESSAGE value="Corrections to definition and implementation of the WS in the Client." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrections to definition and implementation of the WS in the Client." />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
   </component>
 </project>

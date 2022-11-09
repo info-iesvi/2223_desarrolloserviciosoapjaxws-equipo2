@@ -15,13 +15,27 @@ public class BookClient {
         c.addBook(bm);
 
         bm.setId(2);
-        bm.setTitle("Patata voladora");
-        bm.setAuthor("Jacobo Tehacebobo");
+        bm.setTitle("GIT");
+        bm.setAuthor("Someone");
+
+        c.addBook(bm);
+
+        bm.setId(3);
+        bm.setTitle("Java");
+        bm.setAuthor("Someone else");
+
+        c.addBook(bm);
+
+        bm.setId(4);
+        bm.setTitle("SQL");
+        bm.setAuthor("Some other person");
 
         c.addBook(bm);
 
         List<BookModel> books = c.getBookList();
 
-        System.out.println(books);
+        for (BookModel book: books) {
+            System.out.println(book);
+        }
     }
 }
