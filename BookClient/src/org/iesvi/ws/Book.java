@@ -27,6 +27,18 @@ public interface Book {
 
     /**
      * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "deleteBookById", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookById")
+    @ResponseWrapper(localName = "deleteBookByIdResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByIdResponse")
+    @Action(input = "http://ws.iesvi.org/Book/deleteBookByIdRequest", output = "http://ws.iesvi.org/Book/deleteBookByIdResponse")
+    public void deleteBookById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<org.iesvi.ws.BookModel>
      */
@@ -48,18 +60,6 @@ public interface Book {
     public void addBook(
         @WebParam(name = "arg0", targetNamespace = "")
         BookModel arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "deleteBookById", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookById")
-    @ResponseWrapper(localName = "deleteBookByIdResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByIdResponse")
-    @Action(input = "http://ws.iesvi.org/Book/deleteBookByIdRequest", output = "http://ws.iesvi.org/Book/deleteBookByIdResponse")
-    public void deleteBookById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
 
     /**
      * 
