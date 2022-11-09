@@ -4,117 +4,78 @@ import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class that implements the WebService methods defined
+ * by the Book interface and keeps the list.
+ * The WebService annotation is used here to specify the interface
+ * implemented by the current class.
+ */
 @WebService(endpointInterface = "org.iesvi.ws.Book")
 public class BookImpl implements Book {
-    private int id;
-    private String title;
-    private String author;
-
-    public BookImpl() {}
+    private List<BookModel> books;
 
     /**
-     * The BookImpl constructor.
-     *
-     * @param id the book identification number
-     * @param title the name of the book
-     * @param author the person who wrote the book
+     * Default constructor that initializes the list of books.
      */
-    public BookImpl(int id, String title, String author) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String toString() {
-        return "BOOK " + this.id + " | Title: " + this.title + " | Author: " + this.author;
+    public BookImpl() {
+        books = new ArrayList<>();
     }
 
     /**
      * This method is used to query a list of books.
      *
-     * @return List<BookModel>
+     * @return a list defined as List<BookModel>
      */
     @Override
     public List<BookModel> getBookList() {
-        List<BookModel> bookList = new ArrayList<>();
-
-        if (bookList.isEmpty()) {
+        if (this.books.isEmpty()) {
             System.out.println("The book list is empty");
         } else {
-            for (int i = 0; i < bookList.size(); i++) {
-                System.out.println(bookList.get(i));
+            for (int i = 0; i < this.books.size(); i++) {
+                System.out.println(this.books.get(i));
             }
         }
-        return bookList;
+        return this.books;
     }
 
     /**
      * This method is used to register a new book.
      *
-     * @param bookList book list where we add the new book
-     * @param newBook
+     * @param newBook an instance of the BookModel to add
      */
     @Override
-    public void addBook(List<BookModel> bookList, BookModel newBook) {
-        bookList.add(newBook);
+    public void addBook(BookModel newBook) {
+        this.books.add(newBook);
     }
 
     /**
      * This method is used to unsubscribe a book according to the position it occupies within the list.
      *
-     * @param bookList book list where we add the new book
      * @param position the book position into the list
      */
     @Override
-    public void deleteBookByPosition(List<BookModel> bookList, int position) {
-        if (bookList.isEmpty()) {
+    public void deleteBookByPosition(int position) {
+        if (this.books.isEmpty()) {
             System.out.println("The book list is empty");
         } else {
-            for (int i = 0; i < bookList.size(); i++) {
-                bookList.remove(position);
-            }
+            this.books.remove(position);
         }
     }
 
     /**
      * This method is used to unregister a book given its identifier.
      *
-     * @param bookList book list where we add the new book
      * @param id the book identification number
      */
     @Override
-    public void deleteBookById(List<BookModel> bookList, int id) {
-        if (bookList.isEmpty()) {
+    public void deleteBookById(int id) {
+        if (this.books.isEmpty()) {
             System.out.println("The book list is empty");
         } else {
-            for (int i = 0; i < bookList.size(); i++) {
-                bookList.remove(bookList.get(id));
+            for (int i = 0; i < this.books.size(); i++) {
+                if (this.books.get(i).getId() == id) {
+                    this.books.remove(i);
+                }
             }
         }
     }
