@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="161f6dfb-540a-4ba3-a1d7-4d22c5176ea9" name="Changes" comment="Add .gitignore">
-      <change afterPath="$PROJECT_DIR$/src/org/iesvi/ws/BookClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="161f6dfb-540a-4ba3-a1d7-4d22c5176ea9" name="Changes" comment="Added BookClient testing.">
+      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/AddBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/AddBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookById.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookByPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookByPosition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/AddBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/AddBookResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/BookClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/iesvi/ws/BookClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/BookImplService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/BookModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookById.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookByIdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookByPosition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookByPositionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/GetBookList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/GetBookListResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/package-info.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +58,29 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\2022-2023_DAM\PSP\2223_desarrolloserviciosoapjaxws-equipo2\BookClient\src\org\iesvi\ws" />
       <recent name="D:\2022-2023_DAM\PSP\a\2223_desarrolloserviciosoapjaxws-equipo2\BookClient\org\iesvi\ws" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BookClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.iesvi.ws.BookClient" />
+      <module name="BookClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.iesvi.ws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BookClient" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668031822648</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added BookClient testing.">
+      <created>1668035881425</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668035881425</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +150,7 @@
     <MESSAGE value="BookClient: añadidas las clases" />
     <MESSAGE value="Adjustment" />
     <MESSAGE value="Add .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .gitignore" />
+    <MESSAGE value="Added BookClient testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added BookClient testing." />
   </component>
 </project>
