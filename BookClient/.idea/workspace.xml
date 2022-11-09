@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="161f6dfb-540a-4ba3-a1d7-4d22c5176ea9" name="Changes" comment="Added BookClient testing.">
+    <list default="true" id="161f6dfb-540a-4ba3-a1d7-4d22c5176ea9" name="Changes" comment="Corrections to definition and implementation of the WS in the Client.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org/iesvi/ws/AddBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/AddBook.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org/iesvi/ws/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookById.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookById.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookByPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/org/iesvi/ws/DeleteBookByPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/AddBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/AddBookResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/Book.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/BookClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/iesvi/ws/BookClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/BookImplService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/BookModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookById.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookByIdResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookByPosition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/DeleteBookByPositionResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/GetBookList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/GetBookListResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/ObjectFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/iesvi/ws/package-info.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,15 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sarap/OneDrive/Escritorio/tareas/2223_desarrolloserviciosoapjaxws-equipo2/BookClient&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/sarap/OneDrive/Escritorio/tareas/2223_desarrolloserviciosoapjaxws-equipo2/BookClient",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\2022-2023_DAM\PSP\2223_desarrolloserviciosoapjaxws-equipo2\BookClient\src\org\iesvi\ws" />
@@ -128,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668035881425</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Corrections to definition and implementation of the WS in the Client.">
+      <created>1668036436217</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668036436217</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Corrections to definition and implementation of the WS in the Client.">
+      <created>1668036451126</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668036451126</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +154,7 @@
     <MESSAGE value="Adjustment" />
     <MESSAGE value="Add .gitignore" />
     <MESSAGE value="Added BookClient testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BookClient testing." />
+    <MESSAGE value="Corrections to definition and implementation of the WS in the Client." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrections to definition and implementation of the WS in the Client." />
   </component>
 </project>

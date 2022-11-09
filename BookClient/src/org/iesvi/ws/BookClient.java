@@ -1,5 +1,7 @@
 package org.iesvi.ws;
 
+import java.util.List;
+
 public class BookClient {
     public static void main(String[] args) {
         BookImplService s = new BookImplService();
@@ -12,6 +14,14 @@ public class BookClient {
 
         c.addBook(bm);
 
-        c.getBookList();
+        bm.setId(2);
+        bm.setTitle("Patata voladora");
+        bm.setAuthor("Jacobo Tehacebobo");
+
+        c.addBook(bm);
+
+        List<BookModel> books = c.getBookList();
+
+        System.out.println(books);
     }
 }
