@@ -6,6 +6,11 @@ public class BookModel {
     private String author;
 
     /**
+     * Default constructor specified only because it will throw an exception when missing.
+     */
+    public BookModel() {}
+
+    /**
      *
      * @param id the book identification number
      * @param title the name of the book
