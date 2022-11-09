@@ -1,8 +1,6 @@
 
 package org.iesvi.ws;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -18,8 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://ws.iesvi.org/}bookModel" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="arg1" type="{http://ws.iesvi.org/}bookModel" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://ws.iesvi.org/}bookModel" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,65 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addBook", propOrder = {
-    "arg0",
-    "arg1"
+    "arg0"
 })
 public class AddBook {
 
-    protected List<BookModel> arg0;
-    protected BookModel arg1;
+    protected BookModel arg0;
 
     /**
-     * Gets the value of the arg0 property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the arg0 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getArg0().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link BookModel }
-     * 
-     * 
-     */
-    public List<BookModel> getArg0() {
-        if (arg0 == null) {
-            arg0 = new ArrayList<BookModel>();
-        }
-        return this.arg0;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad arg1.
+     * Obtiene el valor de la propiedad arg0.
      * 
      * @return
      *     possible object is
      *     {@link BookModel }
      *     
      */
-    public BookModel getArg1() {
-        return arg1;
+    public BookModel getArg0() {
+        return arg0;
     }
 
     /**
-     * Define el valor de la propiedad arg1.
+     * Define el valor de la propiedad arg0.
      * 
      * @param value
      *     allowed object is
      *     {@link BookModel }
      *     
      */
-    public void setArg1(BookModel value) {
-        this.arg1 = value;
+    public void setArg0(BookModel value) {
+        this.arg0 = value;
     }
 
 }

@@ -39,22 +39,6 @@ public interface Book {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "deleteBookByPosition", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByPosition")
-    @ResponseWrapper(localName = "deleteBookByPositionResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByPositionResponse")
-    @Action(input = "http://ws.iesvi.org/Book/deleteBookByPositionRequest", output = "http://ws.iesvi.org/Book/deleteBookByPositionResponse")
-    public void deleteBookByPosition(
-        @WebParam(name = "arg0", targetNamespace = "")
-        List<BookModel> arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
-
-    /**
-     * 
-     * @param arg1
      * @param arg0
      */
     @WebMethod
@@ -63,13 +47,10 @@ public interface Book {
     @Action(input = "http://ws.iesvi.org/Book/addBookRequest", output = "http://ws.iesvi.org/Book/addBookResponse")
     public void addBook(
         @WebParam(name = "arg0", targetNamespace = "")
-        List<BookModel> arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        BookModel arg1);
+        BookModel arg0);
 
     /**
      * 
-     * @param arg1
      * @param arg0
      */
     @WebMethod
@@ -78,8 +59,18 @@ public interface Book {
     @Action(input = "http://ws.iesvi.org/Book/deleteBookByIdRequest", output = "http://ws.iesvi.org/Book/deleteBookByIdResponse")
     public void deleteBookById(
         @WebParam(name = "arg0", targetNamespace = "")
-        List<BookModel> arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "deleteBookByPosition", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByPosition")
+    @ResponseWrapper(localName = "deleteBookByPositionResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByPositionResponse")
+    @Action(input = "http://ws.iesvi.org/Book/deleteBookByPositionRequest", output = "http://ws.iesvi.org/Book/deleteBookByPositionResponse")
+    public void deleteBookByPosition(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
 }
