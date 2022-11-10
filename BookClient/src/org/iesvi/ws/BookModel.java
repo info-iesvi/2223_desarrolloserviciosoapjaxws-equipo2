@@ -103,4 +103,16 @@ public class BookModel {
         this.title = value;
     }
 
+    /**
+     * Overrides the default toString implementation to show Book elements in the following format:
+     * "Book X | title: A | author: B"
+     *
+     * @return the String that represents the current book
+     */
+    @Override
+    public String toString() {
+        return "Book " + id +
+                " | title: " + title +
+                " | author: " + author;
+    }
 }
