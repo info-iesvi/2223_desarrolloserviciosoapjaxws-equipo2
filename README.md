@@ -42,8 +42,15 @@ In the WSDL file we find the following:
 ## Testing the service
 We have 2 ways of testing that the service works:
 
-- By running the BookClient class at 
-- By importing the SOAPUI project located at the root of this Git Repository.
+- By running the BookClient class at BookClient/src/org/iesvi/ws/BookClient.java which does some test inserts, deletions, and listings.
+- By importing the SOAPUI project located at the root of this Git Repository and running its test suite.
+
+### IntelliJ Testing
+To test with the IDE, we just have to run the BookService to publish the WebService, and then go to the BookClient and run the main method of the BookClient class.
+It will run some code automatically and output results into the console.
+Results and exceptions will be output in the BookService terminal, while the BookClient terminal will output anything that the user programs it to do, or the default test listings.
+
+WARNING: The tests don't use random values, so tests will work only once unless the test code is modified, as a duplicated ID check was implemented into the service. The test suite for SOAPUI has been prepared to do a cleanup as a last test case, so it should not have this issue.
 
 ### SOAPUI Testing
 We would first need to import the project into the application:
