@@ -48,7 +48,10 @@ We have 2 ways of testing that the service works:
 ### IntelliJ Testing
 To test with the IDE, we just have to run the BookService to publish the WebService, and then go to the BookClient and run the main method of the BookClient class.
 It will run some code automatically and output results into the console.
-Results and exceptions will be output in the BookService terminal, while the BookClient terminal will output anything that the user programs it to do, or the default test listings.
+Results and exceptions (if any) will be output in the BookService terminal, while the BookClient terminal will output anything that the user programs it to do, or the default test listings.
+
+![image](https://user-images.githubusercontent.com/98974760/200984930-fb69f635-918c-400d-b2bb-fcfdf96c9982.png)
+
 
 WARNING: The tests don't use random values, so tests will work only once unless the test code is modified, as a duplicated ID check was implemented into the service. The test suite for SOAPUI has been prepared to do a cleanup as a last test case, so it should not have this issue.
 
