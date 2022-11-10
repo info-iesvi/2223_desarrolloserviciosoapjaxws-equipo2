@@ -73,4 +73,4 @@ We then open the BookImplPortBinding TestSuite and hit the green "play" button o
 Both the test cases in the tree on the left and the progress bars on the right should be green, otherwise it would mean some or all of the assertions (the conditions programmed into the test to determine if the test passes or not) within the tests have failed.
 
 If for example we click on the test case for the getBookList case, we will see a new window that contains the URL used, the message sent, the message received, and the assertions and their status. In this case, we check that we did not receive a SOAP error, that the message is valid when checked against the published WSDL, that the message contains the string "getBookListResponse" representing the message type, and that it contains six different item strings, which in this case are the book names.
-![image](https://user-images.githubusercontent.com/98974760/200984575-59f9ab54-f1b4-4ac5-a1f1-2efa36756e4e.png)
+![image](https://user-images.githubusercontent.com/98974760/200985450-723a2323-f71b-494e-a245-c29e983f4dcb.png)
