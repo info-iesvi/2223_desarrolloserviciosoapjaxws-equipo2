@@ -37,5 +37,14 @@ public class BookClient {
         for (BookModel book: books) {
             System.out.println(book);
         }
+
+        c.deleteBookByPosition(2);
+        c.deleteBookById(2);
+
+        books = c.getBookList();
+
+        for (BookModel book: books) {
+            System.out.println(book);
+        }
     }
 }
