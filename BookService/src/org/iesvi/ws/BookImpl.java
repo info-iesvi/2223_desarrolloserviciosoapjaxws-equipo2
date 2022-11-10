@@ -40,12 +40,15 @@ public class BookImpl implements Book {
 
     /**
      * This method is used to register a new book.
+     * Will not do anything if the ID already exists in the list.
      *
      * @param newBook an instance of the BookModel to add
      */
     @Override
     public void addBook(BookModel newBook) {
-        this.books.add(newBook);
+        if (!isIdRepeated(newBook.getId())) {
+            this.books.add(newBook);
+        }
     }
 
     /**
@@ -78,5 +81,24 @@ public class BookImpl implements Book {
                 }
             }
         }
+    }
+
+    /**
+     * Private utility method to check if a provided Book ID already exists or not.
+     *
+     * @param id a Book ID to check
+     * @return true if the ID is in the list, false otherwise
+     */
+    private boolean isIdRepeated(int id) {
+        boolean result = false;
+
+        for (BookModel book : this.books) {
+            if (book.getId() == id) {
+                result = true;
+                break;
+            }
+        }
+
+        return result;
     }
 }
