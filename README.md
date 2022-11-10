@@ -47,9 +47,11 @@ We have 2 ways of testing that the service works:
 
 ### SOAPUI Testing
 We would first need to import the project into the application:
+
 ![image](https://user-images.githubusercontent.com/98974760/200980227-df015be6-2e95-4e91-b25e-74ea69169948.png)
 
 This would give us access to the following tree structure:
+
 ![image](https://user-images.githubusercontent.com/98974760/200980404-dbf32756-d10a-41ea-882e-623c954d6f5a.png)
 
 Now we need the Service to be published and running (in this case, using the "Run" of the IntelliJ IDE will work), otherwise the test suite will fail.
