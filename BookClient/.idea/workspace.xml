@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0294c02-3af5-486c-98b2-2c4c68ac23a1" name="Changes" comment="CostumerService: Recargado el proyecto (vacío de momento) con nombre y estructura correctos" />
+    <list default="true" id="161f6dfb-540a-4ba3-a1d7-4d22c5176ea9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +21,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2GnkBrobbiJl4CnwOQfXqYgS1Hz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,10 +32,38 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/sarap/OneDrive/Escritorio/tareas/2223_desarrolloserviciosoapjaxws-equipo2/BookClient",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\2022-2023_DAM\PSP\2223_desarrolloserviciosoapjaxws-equipo2\BookClient\src\org\iesvi\ws" />
+      <recent name="D:\2022-2023_DAM\PSP\a\2223_desarrolloserviciosoapjaxws-equipo2\BookClient\org\iesvi\ws" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BookClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.iesvi.ws.BookClient" />
+      <module name="BookClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.iesvi.ws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BookClient" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,6 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667031605025</updated>
       <workItem from="1667031606504" duration="321000" />
+      <workItem from="1668030326932" duration="403000" />
     </task>
     <task id="LOCAL-00001" summary="CostumerService: Recargado el proyecto (vacío de momento) con nombre y estructura correctos">
       <created>1667031893759</created>
@@ -51,7 +82,98 @@
       <option name="project" value="LOCAL" />
       <updated>1667031893759</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="BookClient: añadidas las clases">
+      <created>1668030533813</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668030533813</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adjustment">
+      <created>1668031750269</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668031750269</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add .gitignore">
+      <created>1668031822648</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668031822648</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added BookClient testing.">
+      <created>1668035881425</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668035881425</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Corrections to definition and implementation of the WS in the Client.">
+      <created>1668036436217</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668036436217</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Corrections to definition and implementation of the WS in the Client.">
+      <created>1668036451126</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668036451126</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Changes">
+      <created>1668037518426</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668037518426</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes">
+      <created>1668037774933</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668037774933</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changes">
+      <created>1668037848530</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668037848531</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added toString method to the BookModel on the Client.">
+      <created>1668038613194</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1668038613194</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Additional changes to the Client test.">
+      <created>1668038650704</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668038650704</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Additional changes to the Client test.">
+      <created>1668038656703</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1668038656703</updated>
+    </task>
+    <task id="LOCAL-00014" summary="More changes.">
+      <created>1668038732789</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1668038732789</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,6 +192,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CostumerService: Recargado el proyecto (vacío de momento) con nombre y estructura correctos" />
-    <option name="LAST_COMMIT_MESSAGE" value="CostumerService: Recargado el proyecto (vacío de momento) con nombre y estructura correctos" />
+    <MESSAGE value="BookClient: añadidas las clases" />
+    <MESSAGE value="Adjustment" />
+    <MESSAGE value="Add .gitignore" />
+    <MESSAGE value="Added BookClient testing." />
+    <MESSAGE value="Corrections to definition and implementation of the WS in the Client." />
+    <MESSAGE value="Changes" />
+    <MESSAGE value="Added toString method to the BookModel on the Client." />
+    <MESSAGE value="Additional changes to the Client test." />
+    <MESSAGE value="More changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="More changes." />
   </component>
 </project>

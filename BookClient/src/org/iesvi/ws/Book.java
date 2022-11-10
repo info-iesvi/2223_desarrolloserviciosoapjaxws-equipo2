@@ -1,7 +1,10 @@
+
 package org.iesvi.ws;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
@@ -15,7 +18,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "org.iesvi.ws.Book", targetNamespace = "http://ws.iesvi.org/")
+@WebService(name = "Book", targetNamespace = "http://ws.iesvi.org/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -27,69 +30,24 @@ public interface Book {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "getBookByAuthor", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookByAuthor")
-    @ResponseWrapper(localName = "getBookByAuthorResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookByAuthorResponse")
-    @Action(input = "http://ws.iesvi.org/Book/getBookByAuthorRequest", output = "http://ws.iesvi.org/Book/getBookByAuthorResponse")
-    public void getBookByAuthor(
+    @RequestWrapper(localName = "deleteBookById", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookById")
+    @ResponseWrapper(localName = "deleteBookByIdResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByIdResponse")
+    @Action(input = "http://ws.iesvi.org/Book/deleteBookByIdRequest", output = "http://ws.iesvi.org/Book/deleteBookByIdResponse")
+    public void deleteBookById(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        int arg0);
 
     /**
      * 
-     * @param arg0
+     * @return
+     *     returns java.util.List<org.iesvi.ws.BookModel>
      */
     @WebMethod
-    @RequestWrapper(localName = "getBookByEditorial", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookByEditorial")
-    @ResponseWrapper(localName = "getBookByEditorialResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookByEditorialResponse")
-    @Action(input = "http://ws.iesvi.org/Book/getBookByEditorialRequest", output = "http://ws.iesvi.org/Book/getBookByEditorialResponse")
-    public void getBookByEditorial(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "getBookByTitle", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookByTitle")
-    @ResponseWrapper(localName = "getBookByTitleResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookByTitleResponse")
-    @Action(input = "http://ws.iesvi.org/Book/getBookByTitleRequest", output = "http://ws.iesvi.org/Book/getBookByTitleResponse")
-    public void getBookByTitle(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "deleteBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBook")
-    @ResponseWrapper(localName = "deleteBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookResponse")
-    @Action(input = "http://ws.iesvi.org/Book/deleteBookRequest", output = "http://ws.iesvi.org/Book/deleteBookResponse")
-    public void deleteBook(
-        @WebParam(name = "arg0", targetNamespace = "")
-        BookImpl arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "updateBook", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.UpdateBook")
-    @ResponseWrapper(localName = "updateBookResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.UpdateBookResponse")
-    @Action(input = "http://ws.iesvi.org/Book/updateBookRequest", output = "http://ws.iesvi.org/Book/updateBookResponse")
-    public void updateBook(
-        @WebParam(name = "arg0", targetNamespace = "")
-        BookImpl arg0);
-
-    /**
-     * 
-     */
-    @WebMethod
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getBookList", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookList")
     @ResponseWrapper(localName = "getBookListResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.GetBookListResponse")
     @Action(input = "http://ws.iesvi.org/Book/getBookListRequest", output = "http://ws.iesvi.org/Book/getBookListResponse")
-    public void getBookList();
+    public List<BookModel> getBookList();
 
     /**
      * 
@@ -101,6 +59,18 @@ public interface Book {
     @Action(input = "http://ws.iesvi.org/Book/addBookRequest", output = "http://ws.iesvi.org/Book/addBookResponse")
     public void addBook(
         @WebParam(name = "arg0", targetNamespace = "")
-        BookImpl arg0);
+        BookModel arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "deleteBookByPosition", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByPosition")
+    @ResponseWrapper(localName = "deleteBookByPositionResponse", targetNamespace = "http://ws.iesvi.org/", className = "org.iesvi.ws.DeleteBookByPositionResponse")
+    @Action(input = "http://ws.iesvi.org/Book/deleteBookByPositionRequest", output = "http://ws.iesvi.org/Book/deleteBookByPositionResponse")
+    public void deleteBookByPosition(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
 }

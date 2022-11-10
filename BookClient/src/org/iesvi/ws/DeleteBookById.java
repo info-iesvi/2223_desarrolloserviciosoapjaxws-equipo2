@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para addBook complex type.
+ * <p>Clase Java para deleteBookById complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="addBook">
+ * &lt;complexType name="deleteBookById">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://ws.iesvi.org/}bookModel" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,34 +26,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "addBook", propOrder = {
+@XmlType(name = "deleteBookById", propOrder = {
     "arg0"
 })
-public class AddBook {
+public class DeleteBookById {
 
-    protected BookModel arg0;
+    protected int arg0;
 
     /**
      * Obtiene el valor de la propiedad arg0.
      * 
-     * @return
-     *     possible object is
-     *     {@link BookModel }
-     *     
      */
-    public BookModel getArg0() {
+    public int getArg0() {
         return arg0;
     }
 
     /**
      * Define el valor de la propiedad arg0.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BookModel }
-     *     
      */
-    public void setArg0(BookModel value) {
+    public void setArg0(int value) {
         this.arg0 = value;
     }
 

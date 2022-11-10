@@ -1,3 +1,4 @@
+
 package org.iesvi.ws;
 
 import javax.xml.bind.JAXBElement;
@@ -10,7 +11,7 @@ import javax.xml.namespace.QName;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.iesvi.ws package. 
- * <p>An org.iesvi.ws.ObjectFactory allows you to programatically
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -23,122 +24,28 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetBookByEditorial_QNAME = new QName("http://ws.iesvi.org/", "getBookByEditorial");
-    private final static QName _GetBookList_QNAME = new QName("http://ws.iesvi.org/", "getBookList");
-    private final static QName _UpdateBook_QNAME = new QName("http://ws.iesvi.org/", "updateBook");
     private final static QName _AddBookResponse_QNAME = new QName("http://ws.iesvi.org/", "addBookResponse");
-    private final static QName _GetBookByAuthor_QNAME = new QName("http://ws.iesvi.org/", "getBookByAuthor");
-    private final static QName _GetBookByAuthorResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookByAuthorResponse");
-    private final static QName _AddBook_QNAME = new QName("http://ws.iesvi.org/", "addBook");
-    private final static QName _GetBookByTitleResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookByTitleResponse");
-    private final static QName _GetBookByEditorialResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookByEditorialResponse");
+    private final static QName _DeleteBookByPositionResponse_QNAME = new QName("http://ws.iesvi.org/", "deleteBookByPositionResponse");
+    private final static QName _DeleteBookByIdResponse_QNAME = new QName("http://ws.iesvi.org/", "deleteBookByIdResponse");
     private final static QName _GetBookListResponse_QNAME = new QName("http://ws.iesvi.org/", "getBookListResponse");
-    private final static QName _UpdateBookResponse_QNAME = new QName("http://ws.iesvi.org/", "updateBookResponse");
-    private final static QName _DeleteBookResponse_QNAME = new QName("http://ws.iesvi.org/", "deleteBookResponse");
-    private final static QName _DeleteBook_QNAME = new QName("http://ws.iesvi.org/", "deleteBook");
-    private final static QName _GetBookByTitle_QNAME = new QName("http://ws.iesvi.org/", "getBookByTitle");
+    private final static QName _DeleteBookById_QNAME = new QName("http://ws.iesvi.org/", "deleteBookById");
+    private final static QName _GetBookList_QNAME = new QName("http://ws.iesvi.org/", "getBookList");
+    private final static QName _DeleteBookByPosition_QNAME = new QName("http://ws.iesvi.org/", "deleteBookByPosition");
+    private final static QName _AddBook_QNAME = new QName("http://ws.iesvi.org/", "addBook");
 
     /**
-     * Create a new org.iesvi.ws.ObjectFactory that can be used to create new instances of schema derived classes for package: org.iesvi.ws
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.iesvi.ws
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link AddBookResponse }
+     * Create an instance of {@link DeleteBookById }
      * 
      */
-    public AddBookResponse createAddBookResponse() {
-        return new AddBookResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetBookByEditorial }
-     * 
-     */
-    public GetBookByEditorial createGetBookByEditorial() {
-        return new GetBookByEditorial();
-    }
-
-    /**
-     * Create an instance of {@link GetBookList }
-     * 
-     */
-    public GetBookList createGetBookList() {
-        return new GetBookList();
-    }
-
-    /**
-     * Create an instance of {@link UpdateBook }
-     * 
-     */
-    public UpdateBook createUpdateBook() {
-        return new UpdateBook();
-    }
-
-    /**
-     * Create an instance of {@link AddBook }
-     * 
-     */
-    public AddBook createAddBook() {
-        return new AddBook();
-    }
-
-    /**
-     * Create an instance of {@link GetBookByTitleResponse }
-     * 
-     */
-    public GetBookByTitleResponse createGetBookByTitleResponse() {
-        return new GetBookByTitleResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetBookByAuthor }
-     * 
-     */
-    public GetBookByAuthor createGetBookByAuthor() {
-        return new GetBookByAuthor();
-    }
-
-    /**
-     * Create an instance of {@link GetBookByAuthorResponse }
-     * 
-     */
-    public GetBookByAuthorResponse createGetBookByAuthorResponse() {
-        return new GetBookByAuthorResponse();
-    }
-
-    /**
-     * Create an instance of {@link DeleteBook }
-     * 
-     */
-    public DeleteBook createDeleteBook() {
-        return new DeleteBook();
-    }
-
-    /**
-     * Create an instance of {@link DeleteBookResponse }
-     * 
-     */
-    public DeleteBookResponse createDeleteBookResponse() {
-        return new DeleteBookResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateBookResponse }
-     * 
-     */
-    public UpdateBookResponse createUpdateBookResponse() {
-        return new UpdateBookResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetBookByEditorialResponse }
-     * 
-     */
-    public GetBookByEditorialResponse createGetBookByEditorialResponse() {
-        return new GetBookByEditorialResponse();
+    public DeleteBookById createDeleteBookById() {
+        return new DeleteBookById();
     }
 
     /**
@@ -150,46 +57,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetBookByTitle }
+     * Create an instance of {@link DeleteBookByIdResponse }
      * 
      */
-    public GetBookByTitle createGetBookByTitle() {
-        return new GetBookByTitle();
+    public DeleteBookByIdResponse createDeleteBookByIdResponse() {
+        return new DeleteBookByIdResponse();
     }
 
     /**
-     * Create an instance of {@link BookImpl }
+     * Create an instance of {@link AddBookResponse }
      * 
      */
-    public BookImpl createBookImpl() {
-        return new BookImpl();
+    public AddBookResponse createAddBookResponse() {
+        return new AddBookResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByEditorial }{@code >}}
+     * Create an instance of {@link DeleteBookByPositionResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByEditorial")
-    public JAXBElement<GetBookByEditorial> createGetBookByEditorial(GetBookByEditorial value) {
-        return new JAXBElement<GetBookByEditorial>(_GetBookByEditorial_QNAME, GetBookByEditorial.class, null, value);
+    public DeleteBookByPositionResponse createDeleteBookByPositionResponse() {
+        return new DeleteBookByPositionResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookList }{@code >}}
+     * Create an instance of {@link AddBook }
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookList")
-    public JAXBElement<GetBookList> createGetBookList(GetBookList value) {
-        return new JAXBElement<GetBookList>(_GetBookList_QNAME, GetBookList.class, null, value);
+    public AddBook createAddBook() {
+        return new AddBook();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateBook }{@code >}}
+     * Create an instance of {@link DeleteBookByPosition }
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "updateBook")
-    public JAXBElement<UpdateBook> createUpdateBook(UpdateBook value) {
-        return new JAXBElement<UpdateBook>(_UpdateBook_QNAME, UpdateBook.class, null, value);
+    public DeleteBookByPosition createDeleteBookByPosition() {
+        return new DeleteBookByPosition();
+    }
+
+    /**
+     * Create an instance of {@link GetBookList }
+     * 
+     */
+    public GetBookList createGetBookList() {
+        return new GetBookList();
+    }
+
+    /**
+     * Create an instance of {@link BookModel }
+     * 
+     */
+    public BookModel createBookModel() {
+        return new BookModel();
     }
 
     /**
@@ -202,48 +122,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByAuthor }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBookByPositionResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByAuthor")
-    public JAXBElement<GetBookByAuthor> createGetBookByAuthor(GetBookByAuthor value) {
-        return new JAXBElement<GetBookByAuthor>(_GetBookByAuthor_QNAME, GetBookByAuthor.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "deleteBookByPositionResponse")
+    public JAXBElement<DeleteBookByPositionResponse> createDeleteBookByPositionResponse(DeleteBookByPositionResponse value) {
+        return new JAXBElement<DeleteBookByPositionResponse>(_DeleteBookByPositionResponse_QNAME, DeleteBookByPositionResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByAuthorResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBookByIdResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByAuthorResponse")
-    public JAXBElement<GetBookByAuthorResponse> createGetBookByAuthorResponse(GetBookByAuthorResponse value) {
-        return new JAXBElement<GetBookByAuthorResponse>(_GetBookByAuthorResponse_QNAME, GetBookByAuthorResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddBook }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "addBook")
-    public JAXBElement<AddBook> createAddBook(AddBook value) {
-        return new JAXBElement<AddBook>(_AddBook_QNAME, AddBook.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByTitleResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByTitleResponse")
-    public JAXBElement<GetBookByTitleResponse> createGetBookByTitleResponse(GetBookByTitleResponse value) {
-        return new JAXBElement<GetBookByTitleResponse>(_GetBookByTitleResponse_QNAME, GetBookByTitleResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByEditorialResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByEditorialResponse")
-    public JAXBElement<GetBookByEditorialResponse> createGetBookByEditorialResponse(GetBookByEditorialResponse value) {
-        return new JAXBElement<GetBookByEditorialResponse>(_GetBookByEditorialResponse_QNAME, GetBookByEditorialResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "deleteBookByIdResponse")
+    public JAXBElement<DeleteBookByIdResponse> createDeleteBookByIdResponse(DeleteBookByIdResponse value) {
+        return new JAXBElement<DeleteBookByIdResponse>(_DeleteBookByIdResponse_QNAME, DeleteBookByIdResponse.class, null, value);
     }
 
     /**
@@ -256,39 +149,39 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateBookResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBookById }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "updateBookResponse")
-    public JAXBElement<UpdateBookResponse> createUpdateBookResponse(UpdateBookResponse value) {
-        return new JAXBElement<UpdateBookResponse>(_UpdateBookResponse_QNAME, UpdateBookResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "deleteBookById")
+    public JAXBElement<DeleteBookById> createDeleteBookById(DeleteBookById value) {
+        return new JAXBElement<DeleteBookById>(_DeleteBookById_QNAME, DeleteBookById.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBookResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookList }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "deleteBookResponse")
-    public JAXBElement<DeleteBookResponse> createDeleteBookResponse(DeleteBookResponse value) {
-        return new JAXBElement<DeleteBookResponse>(_DeleteBookResponse_QNAME, DeleteBookResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookList")
+    public JAXBElement<GetBookList> createGetBookList(GetBookList value) {
+        return new JAXBElement<GetBookList>(_GetBookList_QNAME, GetBookList.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBook }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBookByPosition }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "deleteBook")
-    public JAXBElement<DeleteBook> createDeleteBook(DeleteBook value) {
-        return new JAXBElement<DeleteBook>(_DeleteBook_QNAME, DeleteBook.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "deleteBookByPosition")
+    public JAXBElement<DeleteBookByPosition> createDeleteBookByPosition(DeleteBookByPosition value) {
+        return new JAXBElement<DeleteBookByPosition>(_DeleteBookByPosition_QNAME, DeleteBookByPosition.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByTitle }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddBook }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "getBookByTitle")
-    public JAXBElement<GetBookByTitle> createGetBookByTitle(GetBookByTitle value) {
-        return new JAXBElement<GetBookByTitle>(_GetBookByTitle_QNAME, GetBookByTitle.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.iesvi.org/", name = "addBook")
+    public JAXBElement<AddBook> createAddBook(AddBook value) {
+        return new JAXBElement<AddBook>(_AddBook_QNAME, AddBook.class, null, value);
     }
 
 }

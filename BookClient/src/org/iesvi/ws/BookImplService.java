@@ -1,3 +1,4 @@
+
 package org.iesvi.ws;
 
 import java.net.MalformedURLException;
@@ -16,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "BookImplService", targetNamespace = "http://ws.iesvi.org/", wsdlLocation = "http://localhost:1516/WS/Book?wsdl")
+@WebServiceClient(name = "BookImplService", targetNamespace = "http://ws.iesvi.org/", wsdlLocation = "http://localhost:1516/WS/Books?wsdl")
 public class BookImplService
     extends Service
 {
@@ -29,7 +30,7 @@ public class BookImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:1516/WS/Book?wsdl");
+            url = new URL("http://localhost:1516/WS/Books?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
@@ -64,7 +65,7 @@ public class BookImplService
     /**
      * 
      * @return
-     *     returns org.iesvi.ws.Book
+     *     returns Book
      */
     @WebEndpoint(name = "BookImplPort")
     public Book getBookImplPort() {
@@ -76,7 +77,7 @@ public class BookImplService
      * @param features
      *     A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
      * @return
-     *     returns org.iesvi.ws.Book
+     *     returns Book
      */
     @WebEndpoint(name = "BookImplPort")
     public Book getBookImplPort(WebServiceFeature... features) {

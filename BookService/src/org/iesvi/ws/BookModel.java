@@ -1,87 +1,94 @@
 package org.iesvi.ws;
 
+/**
+ * This class represents the data model used for storing data about a single book.
+ */
 public class BookModel {
-    private static int idBook;
-    private static String title;
-    private static String author;
-    private static String editorial;
-    private static int stock;
-    private static String condition;
-    private static double prize;
+    private int id;
+    private String title;
+    private String author;
 
     /**
-     * This is the constructor
-     *
-     * @param title
-     * @param author
-     * @param editorial
-     * @param stock
-     * @param condition
-     * @param prize
+     * Default constructor specified only because it will throw an exception when missing.
      */
-    public BookModel (String title, String author, String editorial, int stock, String condition, double prize) {
-        this.idBook = 0;
+    public BookModel() {}
+
+    /**
+     *
+     * @param id the book identification number
+     * @param title the name of the book
+     * @param author the person who wrote the book
+     */
+    public BookModel(int id, String title, String author) {
+        this.id = id;
         this.title = title;
         this.author = author;
-        this.editorial = editorial;
-        this.stock = stock;
-        this.condition = condition;
-        this.prize = prize;
     }
 
-    public static int getIdBook() {
-        return idBook;
+    /**
+     * Method to get the ID number of the current book.
+     *
+     * @return the ID number of the book
+     */
+    public int getId() {
+        return id;
     }
 
-    public void setIdBook(int idBook) {
-        this.idBook = idBook;
+    /**
+     * Method to set the ID number of the current book.
+     *
+     * @param id the new ID number of the book
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public static String getTitle() {
+    /**
+     * Method to get the title of the current book.
+     *
+     * @return the title of the book
+     */
+    public String getTitle() {
         return title;
     }
 
+    /**
+     * Method to set the title of the current book.
+     *
+     * @param title the new title of the book
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public static String getAuthor() {
+    /**
+     * Method to get the author of the current book.
+     *
+     * @return the author of the book
+     */
+    public String getAuthor() {
         return author;
     }
 
+    /**
+     * Method to set the author of the current book.
+     *
+     * @param author the new author of the book
+     */
     public void setAuthor(String author) {
         this.author = author;
     }
 
-    public static String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
-    }
-
-    public static int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public static String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
-    public static double getPrize() {
-        return prize;
-    }
-
-    public void setPrize(double prize) {
-        this.prize = prize;
+    /**
+     * Overrides the default toString implementation to show Book elements in the following format:
+     * "Book X | title: A | author: B"
+     *
+     * @return the String that represents the current book
+     */
+    @Override
+    public String toString() {
+        return "Book " + id +
+                " | title: " + title +
+                " | author: " + author;
     }
 }

@@ -1,151 +1,104 @@
 package org.iesvi.ws;
 
-import util.Keyboard;
-
-import javax.jws.WebParam;
 import javax.jws.WebService;
+import java.util.ArrayList;
+import java.util.List;
 
-import static org.iesvi.ws.BookModel.*;
-
+/**
+ * Class that implements the WebService methods defined
+ * by the Book interface and keeps the list.
+ * The WebService annotation is used here to specify the interface
+ * implemented by the current class.
+ */
 @WebService(endpointInterface = "org.iesvi.ws.Book")
 public class BookImpl implements Book {
-//    private int idBook;
-//    private String title;
-//    private String author;
-//    private String editorial;
-//    private int stock;
-//    private String condition;
-//    private double prize;
+    private List<BookModel> books;
 
     /**
-     * Default constructor
+     * Default constructor that initializes the list of books.
      */
-//    public BookImpl() {
-//    }
-
-//    public BookImpl(String title, String author, String editorial, int stock, String condition, double prize) {
-//        this.idBook = 0;
-//        this.title = title;
-//        this.author = author;
-//        this.editorial = editorial;
-//        this.stock = stock;
-//        this.condition = condition;
-//        this.prize = prize;
-//    }
-
-    public BookImpl(String xmlName) {
-        BookConnection conn = new BookConnection();
-        conn.readXml(xmlName);
+    public BookImpl() {
+        books = new ArrayList<>();
     }
 
-//    @Override
-//    public String toString() {
-//        try {
-//            BookImpl book = new BookImpl("examplesBooks.xml");
-//            this.idBook = book.idBook;
-//            this.stock = book.stock;
-//            this.author = book.author;
-//            this.title = book.title;
-//            this.editorial = book.editorial;
-//            this.prize = book.prize;
-//            this.condition = book.condition;
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        return "\nID: " + this.idBook + " | \tTITLE: " + this.title +
-//                "\n\tAUTHOR: " + this.author +
-//                "\n\tEDITORIAL: " + this.editorial + '\'' +
-//                "\n\tSTOCK: " + this.stock +
-//                "\n\tCONDITION: " + this.condition + '\'' +
-//                "\n\tPRIZE: £" + this.prize;
-//    }
-
+    /**
+     * This method is used to query a list of books.
+     *
+     * @return a list defined as List<BookModel>
+     */
     @Override
-    public void getBookByTitle(String title) {
-        try {
-            BookConnection conn = new BookConnection();
-            conn.readXml("./repository/examplesBooks.xml");
-
-            if (title.equalsIgnoreCase(getTitle())) {
-                System.out.println(this);
+    public List<BookModel> getBookList() {
+        if (this.books.isEmpty()) {
+            System.out.println("The book list is empty");
+        } else {
+            for (int i = 0; i < this.books.size(); i++) {
+                System.out.println(this.books.get(i));
             }
-        } catch (Exception e) {
-            System.out.println("Title not found");
+        }
+        return this.books;
+    }
+
+    /**
+     * This method is used to register a new book.
+     * Will not do anything if the ID already exists in the list.
+     *
+     * @param newBook an instance of the BookModel to add
+     */
+    @Override
+    public void addBook(BookModel newBook) {
+        if (!isIdRepeated(newBook.getId())) {
+            this.books.add(newBook);
         }
     }
 
+    /**
+     * This method is used to unsubscribe a book according to the position it occupies within the list.
+     *
+     * @param position the book position into the list
+     */
     @Override
-    public void getBookByAuthor(String author) {
-        try {
-            BookConnection conn = new BookConnection();
-            conn.readXml("./repository/examplesBooks.xml");
+    public void deleteBookByPosition(int position) {
+        if (this.books.isEmpty()) {
+            System.out.println("The book list is empty");
+        } else {
+            this.books.remove(position);
+        }
+    }
 
-            if (author.equalsIgnoreCase(getAuthor())) {
-                System.out.println(this);
+    /**
+     * This method is used to unregister a book given its identifier.
+     *
+     * @param id the book identification number
+     */
+    @Override
+    public void deleteBookById(int id) {
+        if (this.books.isEmpty()) {
+            System.out.println("The book list is empty");
+        } else {
+            for (int i = 0; i < this.books.size(); i++) {
+                if (this.books.get(i).getId() == id) {
+                    this.books.remove(i);
+                }
             }
-
-        } catch (Exception e) {
-            System.out.println("Author not found");
         }
     }
 
-    @Override
-    public void getBookByEditorial(String editorial) {
-        try {
-            BookConnection conn = new BookConnection();
-            conn.readXml("./repository/examplesBooks.xml");
+    /**
+     * Private utility method to check if a provided Book ID already exists or not.
+     *
+     * @param id a Book ID to check
+     * @return true if the ID is in the list, false otherwise
+     */
+    private boolean isIdRepeated(int id) {
+        boolean result = false;
 
-            if (editorial.equalsIgnoreCase(BookModel.getEditorial())) {
-                System.out.println(this);
+        for (BookModel book : this.books) {
+            if (book.getId() == id) {
+                result = true;
+                break;
             }
-
-        } catch (Exception e) {
-            System.out.println("Editorial not found");
-        }
-    }
-
-    @Override
-    public void getBookList() {
-        try {
-            BookConnection conn = new BookConnection();
-            conn.showXmlData("./repository/examplesBooks.xml");
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
-    }
-
-    @Override
-    public void addBook(@WebParam (new BookModel(getTitle(), getAuthor(), getEditorial(),
-            getStock(), getCondition(), getPrize())) BookModel book) {
-        try {
-            BookConnection conn = new BookConnection();
-            conn.addXmlData("./repository/examplesBooks.xml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void deleteBook(BookImpl deletedBook) {
-        try {
-            BookConnection conn = new BookConnection();
-            conn.deleteXmlData("./repository/examplesBooks.xml", Keyboard.getString("ID to delete: "));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void updateBook(BookImpl updatedBook) {
-        try {
-            BookConnection conn = new BookConnection();
-            conn.updateXmlData("./repository/examplesBooks.xml",
-                    Keyboard.getString("ID to update: "),
-                    Keyboard.getString("What do you want to change? Write 'stock', 'prize' or 'condition': "));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        return result;
     }
 }
