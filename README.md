@@ -37,3 +37,26 @@ In the WSDL file we find the following:
 2. Copy the .java files into the **src** directory.
 3. Add a org.iesvi.ws.BookClient Class where we use the generated classes.
 4. In order to run the client, the service must be running.
+
+
+## Testing the service
+We have 2 ways of testing that the service works:
+
+- By running the BookClient class at 
+- By importing the SOAPUI project located at the root of this Git Repository.
+
+### SOAPUI Testing
+We would first need to import the project into the application:
+![image](https://user-images.githubusercontent.com/98974760/200980227-df015be6-2e95-4e91-b25e-74ea69169948.png)
+
+This would give us access to the following tree structure:
+![image](https://user-images.githubusercontent.com/98974760/200980404-dbf32756-d10a-41ea-882e-623c954d6f5a.png)
+
+Now we need the Service to be published and running (in this case, using the "Run" of the IntelliJ IDE will work), otherwise the test suite will fail.
+We then open the BookImplPortBinding TestSuite and hit the green "play" button on the window that appears on the right, which should look like this at the end:
+![image](https://user-images.githubusercontent.com/98974760/200980870-cca6715f-1a73-4e1d-b1a8-cce96d0ae074.png)
+
+Both the test cases in the tree on the left and the progress bars on the right should be green, otherwise it would mean some or all of the assertions (the conditions programmed into the test to determine if the test passes or not) within the tests have failed.
+
+If for example we click on the test case for the getBookList case, we will see a new window that contains the URL used, the message sent, the message received, and the assertions and their status. In this case, we check that we did not receive a SOAP error, that the message is valid when checked against the published WSDL, that the message contains the string "getBookListResponse" representing the message type, and that it contains six different item strings, which in this case are the book names.
+![image](https://user-images.githubusercontent.com/98974760/200981373-50cfe0dd-efa1-47d7-95a7-4ee731de04df.png)
