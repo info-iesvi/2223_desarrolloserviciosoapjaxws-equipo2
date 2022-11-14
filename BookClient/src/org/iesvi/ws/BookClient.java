@@ -49,7 +49,6 @@ public class BookClient {
         for (BookModel book: books) {
             System.out.println(book);
         }
-        //Hola
-        //que tal
+
     }
 }
